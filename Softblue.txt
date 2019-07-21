@@ -1,0 +1,127 @@
+----Aula 1.1-----
+A lógica existe para ordenar o pensamento, sendo necessária no dia-a-dia das pessoas.
+A lógica seria tirar conclusões, ordenar, organizar o pensamento e obter conclusões para o nosso próprio pensamento.
+
+A lógica de programação possui o objetivo de estabelecer uma sequência lógica de passsos que devem ser executados por um programa de computador. O computador só entende o que deve fazer se receber instruções, sendo estas bem claras, definidas e em uma ordem correta.
+A programação não pode ser feita utilizando a linguagem humana pois ele só entende a lingugem de máquina. 
+Para que se tenha sucesso ao criar um programa deve-se especificar muito bem as coisas de modo que não haja 
+ambiguidade.
+
+Um algoritmo é uma sequência de passos para atingir um objetivo. 
+
+A escrita de um algoritmo em uma lingugem de progrmação é chamada de implementação.
+
+Um programa de computador seria nada mais que a implmentação do algoritmo em uma linguagem de programação.
+
+Os algoritmos são importantes pois podem ser representados de forma independente da
+linguagem de programação utilizada. Enquanto que a lingugem é algo mais concreta, o
+algoritmo seria algo mais abstrato. Por ser algo indenpendente da linguagem é possivel representa-lo em varias linguagens. Ao se escrever um algoritmo se foca apenas na resolução do problema, de modo que vc deixa de lados detalhes como alocação de memoria, entre outros.
+Eles devem ser bem detalhados de modo que seja possivel traduzi-lo para uma linguagem de programação já que o computador deve receber instruções bem claras.
+
+Um algoritmo deve ser escrito de modo que se possa interpreta-lo e codifica-lo facilmente. Uma forma de representa-lo é a utilização do pseudocodigo. O pseudocodigo se situa entre o portugues falado(menos formal) e a linguagem de programção (rigida).
+
+Outra forma de se representar algoritmos e o diagrama de blocos. Ele permite que possamos representar um algoritmo graficamente.
+
+O teste de mesa é uma técnica onde se verifica a funcionalidade de um algoritmo escrito no papel ( tambem em pseudocodigo). Tal tecnica consiste em simular a execução do algoritmo  linha a linha, e tomar nota a respeito do que vai acontecendo no código.
+
+----Aula 2.1-----
+Os computadores trabalham com dados e estes precisam ser de um determinado tipo. Existem duas categorias de tipos de dados:
+-Tipos primitivos: tipos basicos utilizados na construção de algoritmos. 
+Ex: tipo numerico, tipo logico, tipo caracter.
+-Tipos customizados:tipos que não existem nativamente, mas que são criados pelo programadar por alguma necessidade.
+Para criá-lo pode-se agrupar  um ou mais dados primitivos ou até mesmos customizados.
+
+Tipos de dados primitivos: 
+-inteiro.
+-real
+-caractere.(letras,simbolos,numeros em texto)
+-lógico( pode assumir apenas verdadeiro ou falso)
+
+Os dados cujo valor não mudam no decorrer do programa é chamdo de constante.
+O próprio valor de um dado pode ser considerado uma constante.
+
+Os dados cujo valor podem ser alterados durante a execução do algoritmo são chamados de variáveis.
+Para que o valor possa ser rastreado em um determinado momento, o dado deve ser associado a um nome único, chamado identificador.
+
+Toda variavel deve ter um identificador e para formalos devem se seguir algumas regras:
+1.Começa com uma letra ou "_".
+2.Podem ser seguidos por uma ou mais letras ou números.
+3.Caracteres especiais não devem ser utilizados.
+----A unica execeção é o "_".
+
+Em programas de computador, variaveis sao armazenadas em memoria. Uma variavel pode assumir apenas um valor de cada vez. Se um novo valor for atribuido à variavel, se perde o valor antigo.
+
+Quando se cria uma variavel deve-se dizer qual tipo de dados ela suporta, sendo que ela só pode receber dados equivalentes ao seu tipo.
+
+Uma variavel pode assumir diferentes valores desde que o valor corresponda ao seu tipo. É preciso atribuir a variavel o valor para que esta tenha um valor.
+
+Dica: ler o "=" como recebe para não confundir como operador de igualdade. 
+
+A entrada permite que se forneça dados para se ter o processamento.
+E a saida é o resultado do processamento efetuado.
+
+Entre aspas duplas significa o texto literal.
+
+-------Aula 3.1------
+
+Os operadores desempenham funções muito importantes em um algoritmo pois realizam cáulculos matemáticos, comparação de dados e combinam resultados lógicos.
+Existem três tipos de operadores: aritméticos, relacionais e lógicos.
+
+Os operadores aritméticos representam as operações aritméticos. Ex: + - * /
+As operações mais básicas são: + - * /.
+Porém existem outras: potenciação, radiação, %.
+Na preseça de vários operadores é preciso respeitar a prioridade na resolução:
+Mais prioridade:  ()
+                  potenciação  radiação
+		  *      /      % 
+Menor prioridade: +      -
+		Maior              Menor
+Toda vez que se resolve uma expressão aritmética o resultado é sempre um número.
+
+Os operadores relacionais são utilizados na comparação de valores que devem ser do mesmo tipo primitivo. Pode-se comparar constantes, variáveis e até expressões aritme´ticas.
+Operadores relacionais: ==,  >, <, >=, <=, <>.
+                == -->comparação
+		=  -->atribuição
+Toda vez que se resolve uma operação que possui operadores relacionais a resposta é sempre lógica( verdadeiro, falso).
+
+
+Operadores lógicos combinam resultados lógicos de expressões, gerando um novo valor lógico. Operadores lógicos: não --> negação; e --> conjunção; ou --> disjunção.
+Cada operador lógico possui sua própria tabela-verdade e ela expressa todas as combinações possíveis entre os valores lógicos.
+
+Os operadores lógicos também devem seguir uma regra de prioridade:
+maior		menor
+não    	e      ou
+
+
+
+Os operadores lógicos também resultam em um valor lógico.
+
+Quando os três tipos de operadores estão sendo usados em expressões deve-se seguir uma prioridade para sua resolução.
+Maior                             		menor
+()	aritméticos	relacionais	lógicos
+
+Também é possível atribuir o resultado de uma expressão a uma variável.
+A atribuição do valor de um aexpressão para uma variável pe feita depois que a expressão for resolvida.
+
+-------Aula 4.1---------
+
+Um algoritmo possui uma ordem de execução dos seus passos, sendo esta de cima para baixo. Esta é uma execução sequencial.
+
+Um bloco é um agrupamento de código, sendo delimitado por chaves e entre essas chaves há o conjunto de ações, o que forma o bloco.
+O ponto e virgula separa as ações.
+
+Nem sempre a execução sequencial supre as necessidades de um algoritmo. Exemplos:
+-dependendo do resultado de uma operação, é preciso decidir quais ações serão executadas.
+-determinado trecho do algoritmo deve ser repetido até que algo aconteça.
+Para resolver tal impasse existem as estrutura de controle, que se subdividem em estruturas de seleção e estruturas de repetição.
+
+Estrutura de Seleção simples: permite executar ou não um bloco, com base em uma condição lógica. ( só é executado se a condição for verdadeira.) comando "se"
+
+Estrutura de Seleção Composta: quando a mesma condição é utilizada para decidir entre duas alternativas. 
+O bloco do "se" só é executado caso a condição for verdadeira, enquanto que o "senao" só é executado quando a condição é falso. Ou seja, sempre algo será executado.
+
+Estrutura de seleção encadeada: composta pelas estruturas "se" e "se...senao", formando uma estrutura encadeada. Outro exemplo é o "senão...se". Neste caso uma condição se encontra no bloco de outra. Usada quando se necessita verificar várias condições.
+
+Estruturas de repetição: proximo
+
+
