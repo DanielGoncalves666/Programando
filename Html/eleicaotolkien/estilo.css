@@ -1,0 +1,238 @@
+/* Definição dos links */
+a:link{color:#FFFFFF;}
+a:hover{color:#00FF00;}
+a:visited{color:#E68A5C;}
+a:active{color:#FFFFFF;}
+
+/* Formatação do container */
+.container{
+    width: 1000px;
+    margin: auto;
+}
+/* Formatação do header */
+.header{
+    background-color: #E68A5C;
+    width: 1000px;
+    float: left;
+}
+
+.titulo{
+    text-align: center; /*Posicionamento do texto */
+    font-family: "Courier New", Courier, monospace; /* Formatação da fonte */
+    color: #FFFFFF; /* Cor do texto */
+}
+
+.menu{
+    background-color: #FF9966;
+    width: 300px;
+    height: 800px;
+    float: left;
+    text-align:center;
+}
+
+.content{
+    background-color:#FFFFFF;
+    width: 700px;
+    height: 800px;
+    float: left;
+}
+.paragrafo{
+  text-align: center;
+  font-family: "Courier New", Courier, monospace;
+  color: #E68A5C;
+}
+
+.footer{
+    background-color:#E68A5C;
+    width: 1000px;
+    float: left;  
+}
+.pfooter{
+        text-align: center;
+        font-family: "Courier New", Courier, monospace; /* Formatação da fonte */
+        color: #FFFFFF; /* Cor do texto */ 
+}
+img.cand{ /* Definição da formatação das imagens */
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+/*Legolas*/
+#headerlegolas{
+    background-color: #FFD700;
+}
+
+#footerlegolas{
+    background-color: #FFF700;
+}
+
+#menulegolas{
+    background-color:#98FB98;
+
+}
+#caplegolas{
+    text-align: center;
+    font-family: "URW Chancery L", cursive, monospace;
+    color: black;
+    font-size: 50px;
+}
+
+#trlegolas{
+    text-align: center;
+    font-family: "URW Chancery L", cursive, monospace;
+    color: black;
+    font-size: 20px;
+}
+
+
+/*Gandalf*/
+#headergandalf{
+    background-color: #FFD700;
+}
+
+#footergandalf{
+    background-color: #FFF700;
+}
+
+#menugandalf{
+    background-color:#98FB98;
+
+}
+#capgandalf{
+    text-align: center;
+    font-family: "URW Chancery L", cursive, monospace;
+    color: black;
+    font-size: 50px;
+}
+
+#trgandalf{
+    text-align: center;
+    font-family: "URW Chancery L", cursive, monospace;
+    color: black;
+    font-size: 20px;
+}
+
+
+/*Gimli*/
+#headergimli{
+    background-color: #FFD700;
+}
+
+#footergimli{
+    background-color: #FFF700;
+}
+
+#menugimli{
+    background-color:#98FB98;
+
+}
+#capgimli{
+    text-align: center;
+    font-family: "URW Chancery L", cursive, monospace;
+    color: black;
+    font-size: 50px;
+}
+
+#trgimli{
+    text-align: center;
+    font-family: "URW Chancery L", cursive, monospace;
+    color: black;
+    font-size: 20px;
+}
+
+
+/*boromir*/
+#headerboromir{
+    background-color: #FFD700;
+}
+
+#footerboromir{
+    background-color: #FFF700;
+}
+
+#menuboromir{
+    background-color:#98FB98;
+
+}
+#capboromir{
+    text-align: center;
+    font-family: "URW Chancery L", cursive, monospace;
+    color: black;
+    font-size: 50px;
+}
+
+#trboromir{
+    text-align: center;
+    font-family: "URW Chancery L", cursive, monospace;
+    color: black;
+    font-size: 20px;
+}
+
+
+/*Aragorn*/
+#headeraragorn{
+    background-color: #FFD700;
+}
+
+#footeraragorn{
+    background-color: #FFF700;
+}
+
+#menuararagorn{
+    background-color:#98FB98;
+
+}
+#caparagorn{
+    text-align: center;
+    font-family: "URW Chancery L", cursive, monospace;
+    color: black;
+    font-size: 50px;
+}
+
+#traragorn{
+    text-align: center;
+    font-family: "URW Chancery L", cursive, monospace;
+    color: black;
+    font-size: 20px;
+}
+
+
+/*Frodo*/
+#headerfrodo{
+    background-color: #FFD700;
+}
+
+#footerfrodo{
+    background-color: #FFF700;
+}
+
+#menufrodo{
+    background-color:#98FB98;
+
+}
+#capfrodo{
+    text-align: center;
+    font-family: "URW Chancery L", cursive, monospace;
+    color: black;
+    font-size: 50px;
+}
+
+#trfrodo{
+    text-align: center;
+    font-family: "URW Chancery L", cursive, monospace;
+    color: black;
+    font-size: 20px;
+}
+
+
+
+
+
+
+
+
+
+
+
