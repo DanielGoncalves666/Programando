@@ -1,7 +1,7 @@
 /* Definição dos links */
 a:link{color:#FFFFFF;}
 a:hover{color:#00FF00;}
-a:visited{color:#E68A5C;}
+a:visited{color:#000000;}
 a:active{color:#FFFFFF;}
 
 /* Formatação do container */
@@ -11,19 +11,19 @@ a:active{color:#FFFFFF;}
 }
 /* Formatação do header */
 .header{
-    background-color: #E68A5C;
+    background-color: #800080;
     width: 1000px;
     float: left;
 }
 
 .titulo{
     text-align: center; /*Posicionamento do texto */
-    font-family: "Courier New", Courier, monospace; /* Formatação da fonte */
-    color: #FFFFFF; /* Cor do texto */
+    font-family: "URW Chancery L", cursive, monospace; /* Formatação da fonte */
+    color: #000000; /* Cor do texto */
 }
 
 .menu{
-    background-color: #FF9966;
+    background-color: #ff1aff;
     width: 300px;
     height: 800px;
     float: left;
@@ -38,19 +38,20 @@ a:active{color:#FFFFFF;}
 }
 .paragrafo{
   text-align: center;
-  font-family: "Courier New", Courier, monospace;
-  color: #E68A5C;
+  font-family: "URW Chancery L", cursive, monospace;
+  font-size: 20px;
+  color: #000000;
 }
 
 .footer{
-    background-color:#E68A5C;
+    background-color:#800080;
     width: 1000px;
     float: left;  
 }
 .pfooter{
         text-align: center;
-        font-family: "Courier New", Courier, monospace; /* Formatação da fonte */
-        color: #FFFFFF; /* Cor do texto */ 
+        font-family: "URW Chancery L", cursive, monospace; /* Formatação da fonte */
+        color: #ffffff; /* Cor do texto */ 
 }
 img.cand{ /* Definição da formatação das imagens */
     display: block;
@@ -65,11 +66,11 @@ img.cand{ /* Definição da formatação das imagens */
 }
 
 #footerlegolas{
-    background-color: #FFF700;
+    background-color: #FFD700;
 }
 
 #menulegolas{
-    background-color:#98FB98;
+    background-color:#ffff00;
 
 }
 #caplegolas{
@@ -89,15 +90,15 @@ img.cand{ /* Definição da formatação das imagens */
 
 /*Gandalf*/
 #headergandalf{
-    background-color: #FFD700;
+    background-color:  #666666;
 }
 
 #footergandalf{
-    background-color: #FFF700;
+    background-color:#666666;
 }
 
 #menugandalf{
-    background-color:#98FB98;
+    background-color:#b3b3cc;
 
 }
 #capgandalf{
@@ -117,15 +118,15 @@ img.cand{ /* Definição da formatação das imagens */
 
 /*Gimli*/
 #headergimli{
-    background-color: #FFD700;
+    background-color: #b35900;
 }
 
 #footergimli{
-    background-color: #FFF700;
+    background-color: #b35900;
 }
 
 #menugimli{
-    background-color:#98FB98;
+    background-color:#ff8000;
 
 }
 #capgimli{
@@ -145,15 +146,15 @@ img.cand{ /* Definição da formatação das imagens */
 
 /*boromir*/
 #headerboromir{
-    background-color: #FFD700;
+    background-color: #800000;
 }
 
 #footerboromir{
-    background-color: #FFF700;
+    background-color: #800000;
 }
 
 #menuboromir{
-    background-color:#98FB98;
+    background-color:#ff0000;
 
 }
 #capboromir{
@@ -173,15 +174,15 @@ img.cand{ /* Definição da formatação das imagens */
 
 /*Aragorn*/
 #headeraragorn{
-    background-color: #FFD700;
+    background-color: #000080;
 }
 
 #footeraragorn{
-    background-color: #FFF700;
+    background-color: #000080;
 }
 
-#menuararagorn{
-    background-color:#98FB98;
+#menuaragorn{
+    background-color:#8080ff;
 
 }
 #caparagorn{
@@ -201,15 +202,15 @@ img.cand{ /* Definição da formatação das imagens */
 
 /*Frodo*/
 #headerfrodo{
-    background-color: #FFD700;
+    background-color: #00802b;
 }
 
 #footerfrodo{
-    background-color: #FFF700;
+    background-color: #00802b;
 }
 
 #menufrodo{
-    background-color:#98FB98;
+    background-color:#4dff4d;
 
 }
 #capfrodo{
