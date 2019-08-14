@@ -1,0 +1,100 @@
+body, ul { padding: 0; margin: 0; }
+
+.container {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+}
+
+.item {
+    flex-grow: 1;
+    background-position: center;
+    background-size: cover;
+    filter: grayscale(100%);
+    position: relative;
+    list-style: none;
+    transition: all .7s ease-in-out;
+}
+
+.item:hover {
+    flex-grow: 10;
+    filter: grayscale(0%);
+}
+
+.item a {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    position: absolute;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+}
+
+.text {
+    font-size: 0;
+    font-family: sans-serif;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #fff;
+    text-decoration: none;
+    transition: all .5s ease-in-out;
+}
+
+.item:hover .text {
+    font-size: 32px;
+    text-shadow: 2px 2px 12px black;
+}
+
+.primeiro {
+    background-image: url(img/item1.jpg);
+}
+
+.segundo {
+    background-image: url(img/item2.jpg);
+}
+
+.terceiro {
+    background-image: url(img/item3.jpg);
+}
+
+.quarto {
+    background-image: url(img/item4.jpg);
+}
+
+.quinto {
+    background-image: url(img/item5.jpg);
+}
+
+.sexto {
+    background-image: url(img/item6.jpg);
+}
+
+.setimo {
+    background-image: url(img/item7.jpg);
+}
+
+.oitavo {
+    background-image: url(img/item8.jpg);
+}
+
+.nono {
+    background-image: url(img/item9.jpg);
+}
+
+.decimo {
+    background-image: url(img/item10.jpg);
+}
+
+@media screen and (max-width: 768px) {
+
+    .container {
+        flex-direction: column;
+    }
+
+    .text {
+        font-size: 16px;
+    }
+
+}
