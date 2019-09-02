@@ -1,0 +1,73 @@
+/*Daniel Gonçalves && Paulo Henrique*/
+body{
+	font-family: arial;/*Define a fonte arial para o corpo da página HTML*/
+	text-align: center;/*Alinha os textos dentro do body ao centro*/
+}
+
+.container{
+	display: flex; /*Define que o conteiner será flexível*/
+	flex-direction: column; /*Define a direção da flexão*/
+	min-height: 100vh;	/*Define o tamanho mínimo*/
+}
+
+@media(min-width: 768px){
+	.container{
+		grid-template-columns: 200px 1fr 200px; /*Define três colunas, uma com 200px de cada lado e uma ao meio que ocupa o resto da página*/
+		grid-template-rows: auto 1fr auto; /*Define três linhas, duas com tamanho automático e uma ao meio que ocupa o restante da página*/
+	}
+	#container2{
+		display: grid; /*Define a existência de uma grid*/
+	}
+}
+
+header{
+	grid-column: span 3; /*Define o tamanho do item em relação à quantidade de colunas presentes na grid*/
+	padding: 30px; /*Define a margem entre o conteúdo e a div*/
+	text-align: center;/*Define o alinhamento do texto*/
+	font-size:1.4em; /*Define o tamanho da fonte*/
+	background-color: gray; /*Define a cor de fundo*/
+	color: black; /*Define a cor das letras*/
+}
+
+#main1{
+	flex: 1; /*Define o comprimento flexível em itens flexíveis*/
+	padding: 20px; /*Define a margem entre o conteúdo e a div*/
+}
+
+#nav1{
+	background-color: black; /*Define a cor de fundo*/
+	padding: 20px; /*Define a margem entre o conteúdo e a div*/
+	color: white; /*Define a cor das letras*/
+}
+
+#main2{
+	flex: 1; /*Define o comprimento flexível em itens flexíveis*/
+	padding: 20px; /*Define a margem entre o conteúdo e a div*/
+}
+
+#nav2{
+	background-color: black; /*Define a cor de fundo*/
+	padding: 20px; /*Define a margem entre o conteúdo e a div*/
+	color: white; /*Define a cor das letras*/
+}
+
+aside{
+	padding: 20px; /*Define a margem entre o conteúdo e a div*/
+	background-color: black; /*Define a cor de fundo*/
+	color: white; /*Define a cor das letras*/
+}
+
+footer{ 
+	grid-column: span 3; /*Define o tamanho do item em relação à quantidade de colunas presentes na grid*/
+	padding: 30px; /*Define a margem entre o conteúdo e a div*/
+	text-align: center; /*Define o alinhamento do texto*/
+	font-size: 1.4em; /*Define o tamanho da fonte*/
+	background-color: gray; /*Define a cor de fundo*/
+}
+
+h1{
+	margin-bottom: 1em; /*cria um espaço em volta do elemento*/
+	font-size: 1.3em; /*Define o tamanho da fonte*/
+	font-weight: bold; /*Define a característica da letra*/
+}
+
