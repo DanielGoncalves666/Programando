@@ -1,6 +1,6 @@
 #!/bin/bash
 
-mundo=("Shell" "Bash" "Bin" "Bon")
+mundo=(a b c d)
 
 :<<"COMENTARIO"
 ou
@@ -19,4 +19,7 @@ echo ${#mundo[@]}	#imprime a quantidade de elementos
 echo ${mundo[@]:1}	#imprime desde o indice selecionado(incluso) para frente
 echo ${mundo[@]:1:2}	#imprime o intervalo(incluso)  
 
+mundo[4]=e		#para adicionar um novo componente ao final do array basta colocar o índice que extrapole o tamanho do vetor
+
+echo ${mundo[*]}
 

@@ -9,5 +9,4 @@ echo $OLA
 #unset apaga uma variável pelo terminal, isso ocorre automaticamente ao fechar o terminal
 
 #o comando set é usado para mostrar/modificar variáveis de ambiente
-#o comando export, exporta para as variaveis de ambiente somente para aquela sessão
-
+#o comando export, exporta para outros shells, tornando ela global

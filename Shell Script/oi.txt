@@ -1,0 +1,16 @@
+alias.sh
+arrays.sh
+constantes.sh
+funcoes.sh
+oi.txt
+ola mundo.sh
+redirecionar.sh
+variavel.sh
+alias.sh
+arrays.sh
+constantes.sh
+funcoes.sh
+oi.txt
+ola mundo.sh
+redirecionar.sh
+variavel.sh
