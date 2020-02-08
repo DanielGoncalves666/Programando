@@ -26,6 +26,7 @@ minhaFuncao1(){
 #minhaFuncao1 $#		#mostra a quantidade de parâmtros passados
 
 #echo $?		#se retornar 0 significa que tudo rodou de maneira correta
+			#retorna o status do último comando executado
 
 funcaoReturn(){
 	OLA="Olá Mundo!"
