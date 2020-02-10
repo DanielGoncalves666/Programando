@@ -1,87 +1,113 @@
 sudo apt install git --> instala o git na máquina linux
 
-git --global user.name --> retorna o nome de usuário
-	git config --global user.name "usuario" -->configura o nome do usuario
-git --global user.email --> retorna o email do usuário
-	git config --global user.email "email" --> configura o email
+***git version --> verifica a versão atualmente instalada
+***git help -> mostra ajuda e lista os comandos
 
+// - - - - - - - - - - - - - - Configuração - - - - - - - - - - - - - - - - //
 
-git version --> verifica a versão atualmente instalada
-git log --> retorna as informações dos commits realizados
-	git log --oneline -->informações enxutas e em apenas uma linha
-	git log --graph --> mostra o grafo de commits
+***git config --global user.name "usuario" --> configura o nome do usuario
+	git config user.name --> retorna o nome de usuário
 
+***git config --global user.email "email" --> configura o email
+	git config user.email --> retorna o email do usuário
 
-git init --> cria um repositório local
-git add --> adciona arquivos e pastas que foram alterados em um "contêiner"
+***git config --global core.editor "editor" --> configura o editor usado
+	git config core.editor --> retorna o editor padrão
+
+***git config --list --> retorna todas as informações de configuração
+
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - //
+
+***git init --> cria um repositório local
+
+***git status --> verifica os arquivos nos repositórios
+
+***git add --> adiciona os arquivos para poderem ser commitados
 	git add . ou git add * --> adiciona todos os arquivos
-git status --> verifica o que está armazenado no "contêiner"
-git commit --> identifica e armazena o "contêiner" no repositório local
+	git add nome_do_arquivo --> adiciona apenas o arquivo especificado
+
+***git commit --> armazenas os arquivos adicionados em um commit
 	git commit -m "comentário" --> para criar um commit
 	git commit -am "comentario" --> faz a operação do git add e cria um commit novo.
-	git commit --amend --> to change name of a commit
-**commit é um comentário que escrevemos sempre que fazemos uma alteração no projeto.
+	git commit --> um arquivo será aberto e lá vc deve inserir o nome do commit.
 
-git branch --> indica o ramo que o projeto se encontra
+***git log --> retorna as informações dos commits realizados
+	git log --oneline -->informações enxutas e em apenas uma linha
+	git log --graph --> mostra o grafo de commits
+	git log --all --> mostra todos os branchs
 
+***git log nome_do_arquivo --> todos os commits em que o arquivo foi alterado são mostrados
 
-Para recuperar informações de uma versão antiga
-	git checkout sequencia_inicial_do_commit
-		ex: git checkout 8431b83
+***git log --diff-filter=D --summary
+	   --diff-filter irá filtrar os commites e o D indica que será em busca de commits com arquivos deletados
+	   --sumary lista algumas informações
+
+***git rm nome_do_arquivo --> remove um arquivo do repositório
+***git rm --cached nome_do_arquivo --> remove um arquivo que já tenha sido adicionado
+***git checkout (4 primeiros digitos do hash do commit)~1 nome_do_arquivo --> para restaurar um arquivo deletado
+
+***git checkout HASH --> acessa um determinado commit
+
+***git reset HASH--> retorna ao commit especificado
+	--soft --> as mudanças feitas permanecem como não commitadas
+	--mixed --> mesma coisa que o --soft, mas será necessário usar o add
+	--hard --> retorna totalmente para o commit especificado, todas as mudanças feitas são descartadas
+	
+***git reset HEAD --> remove todos os arquivos adicionados
+	git reset HEAD arquivo --> remove apenas o arquivo	
+	
+***git revert HASH--> volta para o commit anterior sem excluir-lo
+	--no-edit --> vai voltar o commit que estava anteriormente
+	 --abort --> para abortar uma operação revert com erros
+
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - //	
+
+***git branch --> indica o ramo que o projeto se encontra
+	git branch nome_do_novo_branch --> cria um novo branch
+	git branch -D nome_do_branch --> deleta o branch
+
+***git checkout nome_do_branch --> muda o repositório para o branch especificado 
+
+***git checkout -b nome_da_nova_branch --> cria uma nova branch
+
+***git merge nome_do_ramo --> fundir uma branch com a master
+
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - //	
+
+***git diff --> mostra as mudanças realizadas nos arquivos não foram adicionados
+	--staged --> mostra as mudanças realizadas nos arquivos que já foram adicionados
+	--name-only --> mostra quais arquivos foram alterados
+	nome_do_arquivo --> para mostrar as mudanças apenas naquele arquivo
 		
-Para retornar para a última versão 
-	git checkout master
-	
-git diff --> mostra as mudanças realizadas nos arquivos
+***git checkout nome_da_branch -- nome_do_arquivo --> para desfazer mudanças que foram realizadas e não foram adicionadas
 
-Para descartar mudanças que foram feitas:
-	git checkout nome_do_arquivo
-	Caso as alterações já tenham sido commitadas, não será possivel.
+***git show --> mostra as alterações realizadas no ultimo commit
+		se quisermos um commit mais antigo, basta especificarmos o nome (hash)
 
-Neste caso, temos que usar o seguinte comando para remover as mudanças do contêiner
-	git reset HEAD --> para todos os arquivos
-	git reset HEAD arquivo
-	
-Para remover um commit e voltar ao anterior:
-	git reset --hard hash_anterior
-	
-	O comando --hard remove as alterações no diretorio
-	
-	
-RAMIFICAÇÕES
 
-git branch --> exibe a branch atual
 
-git checkout -b nome_da_nova_branch --> para criar um novo ramo no projeto
-Assim que criarmos um commit, ele será associado com estre novo ramo.
+// - - - - - - - - - - - - - GITHUB - - - - - - - - - - - - - - - - - - - - //	
 
-git checkout nome_da_branch --> para mudar de ramo
+***git remote --> verifica se exite um repositório remoto
+	      -v --> mostra detalhes de um repositório remoto
 
-git log --oneline --graph --all --> para mostrar o grafo de todos os ramos
+***git remote add nome_repositorio_online https://github.com/DanielGoncalves666/nome_do_repositorio.git   --> faz a ligação com o repositório remoto
 
-Para fundir um ramo com o ramo master:
-	git merge nome_do_ramo
-		Caso existirem conflitos, é necessário resolvê-los antes de prosseguir.
-		O próprio GIT mostrará aonde está o conflito.
-		
-	Quando os conflitos tiverem sido resolvidos
-		git add .
-		git commit -m nome
-		
-		
-no GITHUB
-
-git remote --> verifica se exite um repositório remoto
-git remote -v --> mostra detalhes de um repositório remoto
-
-git remote add origin https://github.com/DanielGoncalves666/Teste.git   --> faz a ligação com o repositório remoto
-git push -u origin master --> enviar para o repositorio remoto
+***git push -u repositório_online  branch_que_sera_enviada --> enviar para o repositorio remoto
 	-u  de upstream
-	origin é o repositório remoto
-	master é o repositório local
-		
-			
+	git push repositório_online  branch_que_sera_enviada --> enviar para o repositório depois da primeira vez
+	git push --> mesmo que o anterior, funciona igualmente
 
+***git push repositório_online  :branch --> deleta uma branch remota
+
+// - - - - - - - //
+
+***git pull repositorio_online branch --> puxa as alterações realizadas na branche especificada do repostorio remoto
+	git pull --> puxa tudo
+
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - //
+
+***git clone URL_do_projeto --> para clonar um projeto a partir de um repositorio remoto
 
 - - - - - - - - - GITHUB - - - - - - - - - - -
 Para clonar um repositório do GitHub para a nossa máquina local, precisamos do link obtido em "clone ou download":
