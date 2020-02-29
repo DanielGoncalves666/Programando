@@ -30,6 +30,8 @@ sudo apt install git --> instala o git na máquina linux
 	git commit -m "comentário" --> para criar um commit
 	git commit -am "comentario" --> faz a operação do git add e cria um commit novo.
 	git commit --> um arquivo será aberto e lá vc deve inserir o nome do commit.
+	
+***git commit -m "comentario" --amend --> corrigi o nome de um commit
 
 ***git log --> retorna as informações dos commits realizados
 	git log --oneline -->informações enxutas e em apenas uma linha
