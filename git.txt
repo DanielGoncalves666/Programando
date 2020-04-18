@@ -56,11 +56,15 @@ sudo apt install git --> instala o git na máquina linux
 	--hard --> retorna totalmente para o commit especificado, todas as mudanças feitas são descartadas
 	
 ***git reset HEAD --> remove todos os arquivos adicionados
-	git reset HEAD arquivo --> remove apenas o arquivo	
+	git reset HEAD arquivo --> remove apenas o arquivo
 	
 ***git revert HASH--> volta para o commit anterior sem excluir-lo
 	--no-edit --> vai voltar o commit que estava anteriormente
 	 --abort --> para abortar uma operação revert com erros
+
+***git stash --> permite armazenar alterações feitas sem ter que commitar
+	git stash list --> mostra os stash feitos
+	git stash pop --> aplica o último stash no repositório
 
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - //	
 
@@ -72,14 +76,18 @@ sudo apt install git --> instala o git na máquina linux
 
 ***git checkout -b nome_da_nova_branch --> cria uma nova branch
 
-***git merge nome_do_ramo --> fundir uma branch com a master
+***git merge nome_do_ramo --> fundir uma branch com a que se estiver trabalhando no momento (para muitos conflitos)
+
+***git rebase nome_da_outra_branch --> remove os commits depois da base, coloca os commits da outra branch e adiciona os commits removidos na frente. Isso elimina a árvore que se vai criando com o merge
+	git rebase --continue --> depois que se resolver os conflitos que aparecerem
 
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - //	
 
 ***git diff --> mostra as mudanças realizadas nos arquivos não foram adicionados
 	--staged --> mostra as mudanças realizadas nos arquivos que já foram adicionados
 	--name-only --> mostra quais arquivos foram alterados
-	nome_do_arquivo --> para mostrar as mudanças apenas naquele arquivo
+	--nome_do_arquivo --> para mostrar as mudanças apenas naquele arquivo
+	--Head~1 --> mostras as diferenças em relação ao penultimo commit (basta alterar o número)
 		
 ***git checkout nome_da_branch -- nome_do_arquivo --> para desfazer mudanças que foram realizadas e não foram adicionadas
 
@@ -104,38 +112,22 @@ sudo apt install git --> instala o git na máquina linux
 
 // - - - - - - - //
 
-***git pull repositorio_online branch --> puxa as alterações realizadas na branche especificada do repostorio remoto
+***git pull repositorio_online branch --> puxa as alterações realizadas na branch especificada do repositorio remoto
 	git pull --> puxa tudo
 
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - //
 
 ***git clone URL_do_projeto --> para clonar um projeto a partir de um repositorio remoto
 
-- - - - - - - - - GITHUB - - - - - - - - - - -
-Para clonar um repositório do GitHub para a nossa máquina local, precisamos do link obtido em "clone ou download":
-	https://github.com/DanielGoncalves666/Teste.git --> como esse
+//- - - - - - - - - GITHUB - - - - - - - - - - - //
 	
-Usamos então o seguinte comando na pasta onde queremos que o repositório seja clonado
-	git clone https://github.com/DanielGoncalves666/Teste.git
-	
-Agora o git já passa a fazer o controle de versionamento normal
-	Agora é possível usar os comandos básicos
-	
-git push --> para enviar ao GitHub quaisquer mudanças realizadas no repositório
+***git fetch --> baixa as atualizações do repositório remoto, mas não as aplica	
+	Podemos usar git rebase para integrar as mudanças	
 
-Para sincronizar mudanças feitas no GitHub com o repositorio local
-	git pull
-	
-	
-Devido ao uso em diversos lugares de um mesmo repositório, pode ocorrer de existir mudançar em um que não estão no outro, mas que estão
-no repositório remoto. Se isso ocorre, será impossivel enviar mudanças por meio do git push
-	
-	git fetch -->mostra as alterações feitas no repositório remoto
-	
-	git checkout origin --> acessa o último commit feito no repositório remoto
-		origin pode ser sobstituido pelo branch
+// - - - - - - - - - - - - - Tag - - - - - - - - - //
+Aponta para um commit específico
 
-	git pull --> irá unir o repositório remoto com o local
-	
-Resolvemos os conflitos, fazemos um novo commit e mandamos de volta
-	git push
+***git tag nome_da_tag --> cria uma tag que aponta para o commit sendo acessado
+	git tag --> mostra as tags existentes
+
+***git push repositório_online nome_da_tag --> para mandar para o github
