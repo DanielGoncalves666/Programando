@@ -5,7 +5,7 @@ int h1, m1, h2, m2, qtd_min = 0;
 
 int main(){
 	scanf("%d %d %d %d", &h1, &m1, &h2, &m2);
-	if(h1 == h2){//funciona
+	if(h1 == h2){
 		if(m1 == m2)
 			printf("O JOGO DUROU 24 HORA(S) E 0 MINUTO(S)\n");
 		else if(m1 < m2){
