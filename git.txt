@@ -3,7 +3,7 @@ sudo apt install git --> instala o git na máquina linux
 ***git version --> verifica a versão atualmente instalada
 ***git help -> mostra ajuda e lista os comandos
 
-// - - - - - - - - - - - - - - Configuração - - - - - - - - - - - - - - - - //
+// - - - - - - - - - - - - - - Configuração - - - - - - - - - - - - - - - - - -//
 
 ***git config --global user.name "usuario" --> configura o nome do usuario
 	git config user.name --> retorna o nome de usuário
@@ -16,9 +16,10 @@ sudo apt install git --> instala o git na máquina linux
 
 ***git config --list --> retorna todas as informações de configuração
 
-// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - //
+// - - - - - - - - - - - - - - - Básico - - - - - - - - - - - - - - - - - - - //
 
 ***git init --> cria um repositório local
+	git init --bare --> cria um repositório remoto em um servidor
 
 ***git status --> verifica os arquivos nos repositórios
 
@@ -37,8 +38,14 @@ sudo apt install git --> instala o git na máquina linux
 	git log --oneline -->informações enxutas e em apenas uma linha
 	git log --graph --> mostra o grafo de commits
 	git log --all --> mostra todos os branchs
-
+	git log -n K --> mostra os K últimos commits
+	git log --stat --> mosta o numero de linhas adicionadas e removidas
+	git log --parents --> mostra, na frente do hash do commit, o hash do commit pai
+	git log --decorate --> mostra onde o head está
+	
 ***git log nome_do_arquivo --> todos os commits em que o arquivo foi alterado são mostrados
+
+// - - - - - - - - - - - - - - - Básico 2 - - - - - - - - - - - - - - - - - - //
 
 ***git log --diff-filter=D --summary
 	   --diff-filter irá filtrar os commites e o D indica que será em busca de commits com arquivos deletados
@@ -66,42 +73,57 @@ sudo apt install git --> instala o git na máquina linux
 	git stash list --> mostra os stash feitos
 	git stash pop --> aplica o último stash no repositório
 
-// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - //	
+// - - - - - - - - - - - - - - Branch - - - - - - - - - - - - - - - - - - - //	
 
 ***git branch --> indica o ramo que o projeto se encontra
 	git branch nome_do_novo_branch --> cria um novo branch
-	git branch -D nome_do_branch --> deleta o branch
+	git branch -d nome_do_branch --> deleta o branch, se nao tiver nenhum cmmit
+		   -D --> deleta a branch, caso tiver algum commit
+	git branch -v --> mostra o último commit na branch
+	git branch -r --> lista as branchs remotas
 
 ***git checkout nome_do_branch --> muda o repositório para o branch especificado 
 
-***git checkout -b nome_da_nova_branch --> cria uma nova branch
+***git checkout -b nome_da_nova_branch --> cria uma nova branch e muda para ela
+***git checkout -b branch_local branch_remota/branch_local --> para criar uma branch local que condiz com a branch remota
+	git checkout -t branch_remota/branch_local --> faz a mesma coisa
 
 ***git merge nome_do_ramo --> fundir uma branch com a que se estiver trabalhando no momento (para muitos conflitos)
+	***  -m "comentário" --> para enserir o comentario na hora
 
 ***git rebase nome_da_outra_branch --> remove os commits depois da base, coloca os commits da outra branch e adiciona os commits removidos na frente. Isso elimina a árvore que se vai criando com o merge
 	git rebase --continue --> depois que se resolver os conflitos que aparecerem
 
-// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - //	
+// - - - - - - - - - - - - Diferenças e Alterações - - - - - - - - - - - - - //	
 
 ***git diff --> mostra as mudanças realizadas nos arquivos não foram adicionados
-	--staged --> mostra as mudanças realizadas nos arquivos que já foram adicionados
+	--staged --> mostra a diferença entre os arquivos em staged e do ultimo commit
 	--name-only --> mostra quais arquivos foram alterados
-	--nome_do_arquivo --> para mostrar as mudanças apenas naquele arquivo
-	--Head~1 --> mostras as diferenças em relação ao penultimo commit (basta alterar o número)
-		
+	nome_do_arquivo --> para mostrar as mudanças apenas naquele arquivo
+	hash --> mostras as diferenças em relação ao commit especificado, tanto dos arquivos em staged como fora
+	hash..hash' --> mostra as mudanças realizadas entre o commit hash e hash'
+	hash~n ---> mostra as mudanças entre o commit hash e o commit n anterior	
+	
 ***git checkout nome_da_branch -- nome_do_arquivo --> para desfazer mudanças que foram realizadas e não foram adicionadas
+
+***git checkout -- nome_do_arquivo --> para desfazer mudanças que não foram adicionadas ao staged
+
+***git reset -- nome_do_arquivo --> retira as mudanças do arquivo que já estiverem no staged
+	--hard --> desfaz as mudanças realizadas no arquivo
 
 ***git show --> mostra as alterações realizadas no ultimo commit
 		se quisermos um commit mais antigo, basta especificarmos o nome (hash)
 
-
-
-// - - - - - - - - - - - - - GITHUB - - - - - - - - - - - - - - - - - - - - //	
+//- - - - - - - - - - - - - - - -GITHUB - - - - - - - - - - - - - - - - - - //
 
 ***git remote --> verifica se exite um repositório remoto
 	      -v --> mostra detalhes de um repositório remoto
 
 ***git remote add nome_repositorio_online https://github.com/DanielGoncalves666/nome_do_repositorio.git   --> faz a ligação com o repositório remoto
+	git remote add servidor file://endereço/caminho --> para um repositorio remoto em um servidor
+	
+***git remote rename nome_repo_remoto outro_nome --> muda o nome do repositório remoto
+***git remote set-url nome_repo_remoto nova_url --> muda a url de um repositório remoto
 
 ***git push -u repositório_online  branch_que_sera_enviada --> enviar para o repositorio remoto
 	-u  de upstream
@@ -110,21 +132,16 @@ sudo apt install git --> instala o git na máquina linux
 
 ***git push repositório_online  :branch --> deleta uma branch remota
 
-// - - - - - - - //
-
 ***git pull repositorio_online branch --> puxa as alterações realizadas na branch especificada do repositorio remoto
 	git pull --> puxa tudo
-
-// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - //
-
-***git clone URL_do_projeto --> para clonar um projeto a partir de um repositorio remoto
-
-//- - - - - - - - - GITHUB - - - - - - - - - - - //
 	
 ***git fetch --> baixa as atualizações do repositório remoto, mas não as aplica	
-	Podemos usar git rebase para integrar as mudanças	
+	Podemos usar git rebase para integrar as mudanças
+	
+***git clone URL_do_projeto --> para clonar um projeto a partir de um repositorio remoto	
 
-// - - - - - - - - - - - - - Tag - - - - - - - - - //
+// - - - - - - - - - - - - - Tag - - - - - - - - - - - - - - - - - - - - - //
+
 Aponta para um commit específico
 
 ***git tag nome_da_tag --> cria uma tag que aponta para o commit sendo acessado

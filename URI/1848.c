@@ -2,38 +2,33 @@
 #include<stdlib.h>
 #include<string.h>
 
-int gritos = 0, repet = 0, soma, numero;
-char string[8];
+int gritos = 0,soma = 0;
+char *string = NULL;
 
 int main(){
-
-	for(;gritos<3;){
-		scanf("%s ",string);
+	for(;;){
+		string = malloc(sizeof(char)*9);
+		fgets(string,8,stdin);
 		
 		if(string[0] == 'c'){
 			gritos++;
-			repet++;
-			if(repet == 2)
-				printf("0\n");
-			if(soma > 0){
-				printf("%d\n",soma);
-				soma = 0;
-			}	
+			printf("%d\n",soma);
+			soma = 0;
+			if(gritos == 3)
+				break;
 		}else{
-			repet = 0;
-			numero = 0;
-
 			if(string[0] == '*')
-				numero += 4;
-			if(string[1] == '*')
-				numero += 2;
-			if(string[2] == '*')
-				numero += 1;
+				soma += 4;
 				
-			soma += numero;
+			if(string[1] == '*')
+				soma += 2;
+				
+			if(string[2] == '*')
+				soma +=1;
 		}
+		
+		free(string);
 	}
 
-
 	return 0;
-}	
+}
