@@ -12,7 +12,7 @@ int main(){
     for(i=0;i<N;i++)
         cin>>vet2[i];
     for(i=M-1;i>=0;i--){
-        som[i+1]
+        som[i+1];
     }
 
 
