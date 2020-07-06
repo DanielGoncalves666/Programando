@@ -8,7 +8,7 @@ int main(){
         for(int i=0; i<N; i++){
             scanf("%d",&str[i]);
         }
-        for(int i=0;i<N;){
+        for(int i=0;i<N-1;){
             if(str[i] > str[i+1]){
                 int aux = str[i];
                 str[i] = str[i+1];
@@ -24,5 +24,3 @@ int main(){
 
     return 0;
 }
-
-
