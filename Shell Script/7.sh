@@ -2,7 +2,7 @@
 
 if [ -d $1 ]
 then
-	for item in $1/*
+	for item in $1/*			#semelhante ao for do python
 	do
 		if [ -d "$item" ]
 		then

@@ -1,6 +1,6 @@
 #!/bin/bash
 
-#seu funcionamento é semelhante ao Switch Case da linguagem C
+#seu funcionamento é semelhante ao Switch Case da linguagem C, mas aqui string sao permitidas
 
 local=sala
 
