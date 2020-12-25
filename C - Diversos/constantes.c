@@ -4,7 +4,7 @@
 const int aposentadoria = 65;
 const int motorista = 16;
 
-//nao é recomendavel o uso de constantes pois em caso de ter alguma alteração que deva ser feita
+//nao é recomendavel o uso de variáveis pois em caso de ter alguma alteração que deva ser feita
 //em um programa com mmilhares de linhas, isso causaria um grande problema.
 //para solucionar esse problema podemos usar constantes
 //podemos declarar funções usando o comando const ou #define e por muitas vezes é um costume declara-las abixo das bibliotecas
