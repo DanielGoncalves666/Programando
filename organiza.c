@@ -18,15 +18,15 @@ int main(){
 	
 	for(int i=0; i<qtd; i++){
 		for(int h=0; h<tamanho; h++){
-			scanf("%f ",&vetor[h]);//armazena os valores no vetor
+			scanf("%f",&vetor[h]);//armazena os valores no vetor
 		}
 		organiza_vetor(vetor,tamanho);
-		scanf("%d %d ",&a,&b);//localização da porta
+		//scanf("%d %d ",&a,&b);//localização da porta
 		
 		desvioPadrao = calculaDesvioPadrao(vetor,tamanho);
 		
 		printf("Desvio Padrão = %f", desvioPadrao);
-		printf("\t%d %d\n\n",a,b);
+		//printf("\t%d %d\n\n",a,b);
 	}
 	return 0;
 }

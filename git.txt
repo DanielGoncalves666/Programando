@@ -105,7 +105,6 @@ sudo apt install git --> instala o git na máquina linux
 	hash~n ---> mostra as mudanças entre o commit hash e o commit n anterior	
 	
 ***git checkout nome_da_branch -- nome_do_arquivo --> para desfazer mudanças que foram realizadas e não foram adicionadas
-
 ***git checkout -- nome_do_arquivo --> para desfazer mudanças que não foram adicionadas ao staged
 
 ***git reset -- nome_do_arquivo --> retira as mudanças do arquivo que já estiverem no staged

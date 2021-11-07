@@ -8,5 +8,6 @@ int main (void) {
    printf (" p = %ld\n", (long int) p);
    printf (" p = %p\n", (void *) p);
    printf ("&p = %p\n", (void *) &p);
+   printf ("sizeof(p) = %ld\n", sizeof(int *));
    return 0;
 }
