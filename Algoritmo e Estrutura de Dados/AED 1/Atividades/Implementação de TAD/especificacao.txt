@@ -1,0 +1,46 @@
+Nome TAD: Aluno
+	Dados: nome (string) de 50 caracteres, media (double) e numero de faltas (int)
+	Lista de operações: alocar, preencher, pegar_media, pegar_faltas, pegar_nome, deletar.
+	
+Operações:
+	alocar:
+		Entrada: nenhuma
+		Pré-condição: nenhuma
+		Processo: aloca uma estrutura do tipo Aluno
+		Saída: ponteiro para a estrutura alocada, em sucesso, NULL, em falha
+		Pós-condição: nenhuma
+		
+	preencher:
+		Entrada: uma string, um double, int e um ponteiro para o tipo Aluno
+		Pré-condição: o double e o int não podem ser menores que zero. O ponteiro deve apontar para um endereço válido
+		Processo: prenche os campos da estrutura Aluno
+		Saída: 0, em falha, 1, em sucesso
+		Pós-condição: os campos da estrutura estarão preenchidos.
+		
+	pegar_media:
+		Entrada: ponteiro para o tipo Aluno
+		Pré-condição: o ponteiro deve apontar para um endereço válido
+		Processo: nenhum
+		Saída: a media armzenado, em sucesso, -1, em fracasso
+		Pós-condição: nenhuma
+	
+	pegar_faltas:
+		Entrada: ponteiro para o tipo Aluno
+		Pré-condição: o ponteiro deve apontar para um endereço válido
+		Processo: nenhum
+		Saída: as faltas armzenado, em sucesso, -1, em fracasso
+		Pós-condição: nenhuma
+	
+	pegar_nome:
+		Entrada: ponteiro para o tipo Aluno
+		Pré-condição: o ponteiro deve apontar para um endereço válido
+		Processo: nenhum
+		Saída: o nome armazenado, em sucesso, NULL, em fracasso
+		Pós-condição: nenhuma
+	
+	deletar:
+		Entrada: ponteiro de ponteiro para o tipo Aluno
+		Pré-condição: nenhuma
+		Processo: libera a memória alocada e seta o ponteiro para NULL
+		Saída: nenhuma
+		Pós-condição: a mmória alocada foi liberada e o ponteiro aponta para NULL.

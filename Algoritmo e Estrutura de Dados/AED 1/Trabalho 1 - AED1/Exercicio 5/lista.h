@@ -1,0 +1,11 @@
+typedef struct no *Lista;
+Lista criaLista();
+int listaVazia(Lista li);
+int insereFinal(Lista *li, char element);
+int removeInicio(Lista *li, char *element);
+int imprimeLista(Lista li);
+int tamanho(Lista li);
+int removePos(Lista *li, int posicao);
+int inserePos(Lista *li, int posicao, char element);
+int insereInicio(Lista *li, char element);
+int remove_final(Lista *lst, char *elem);

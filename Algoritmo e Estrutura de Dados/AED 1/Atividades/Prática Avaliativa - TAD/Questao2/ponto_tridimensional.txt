@@ -1,0 +1,48 @@
+Nome TAD: ponto_tridimensional
+	Dados: três inteiros, cada um representando as coordenadas x,y,z.
+	Lista de operações: criar_ponto, preenche_ponto, libera_ponto, distancia_pontos
+	
+Operações:
+	criar_ponto:
+		Entrada: três inteiros, cada um representando uma das coordenadas, x, y e z, respectivamente.
+		Pré-condição: nenhuma
+		Processo: aloca dinamicamente uma estrutura do tipo ponto_tri e preenche seus campos com os dados recebidos
+		Saída: endereço para estrutura do tipo ponto_tri, em sucesso, NULL, em fracasso
+		Pós-condição: nenhuma
+
+	libera_ponto:
+		Entrada: ponteiro para ponteiro para uma estrutura do tipo ponto_tri.
+		Pré-condição: nenhuma
+		Processo: delaloca a estrutura apontada pelo ponteiro recebido e atribui NULL a ele.
+		Saída: nenhuma
+		Pós-condição: estrutura desaloca e ponteiro apontando para NULL.
+		
+	distancia_pontos:
+		Entrada: ponteiro para duas estruturas do tipo ponto_tri.
+		Pré-condição: ambos ponteiros precisam apontar para endereços válidos.
+		Processo: calcula a distancia euclidiana entre os pontos recebidos
+		Saída: -1, em falha, a distancia euclidiana, em sucesso. Saída em double
+		Pós-condição: nenhuma.
+		
+	get_x:
+		Entrada: ponteiro para uma estrutura do tipo ponto_tri.
+		Pré-condição: o ponteiro deve apontar para um endereço válido. (Essa verificação deve ser feita antes da função ser chamada, pois não existe jeito de se retornar um flag avisando de erro).
+		Processo: acessa o campo da estrutura específicado
+		Saída: a coordenada x.
+		Pós-condição: nenhuma
+		
+	get_y:
+		Entrada: ponteiro para uma estrutura do tipo ponto_tri.
+		Pré-condição: o ponteiro deve apontar para um endereço válido. (Essa verificação deve ser feita antes da função ser chamada, pois não existe jeito de se retornar um flag avisando de erro).
+		Processo: acessa o campo da estrutura específicado
+		Saída: a coordenada y.
+		Pós-condição: nenhuma		
+		
+	get_z:
+		Entrada: ponteiro para uma estrutura do tipo ponto_tri.
+		Pré-condição: o ponteiro deve apontar para um endereço válido. (Essa verificação deve ser feita antes da função ser chamada, pois não existe jeito de se retornar um flag avisando de erro).
+		Processo: acessa o campo da estrutura específicado
+		Saída: a coordenada z.
+		Pós-condição: nenhuma	
+		
+

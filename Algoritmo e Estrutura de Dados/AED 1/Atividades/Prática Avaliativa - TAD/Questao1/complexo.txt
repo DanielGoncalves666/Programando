@@ -1,0 +1,39 @@
+Nome TAD: complexo
+	Dados: double, representando a parte real; double, representando a parte imaginária.
+	Lista de operações: criar_nro, libera_nro, soma, sub, mult.
+	
+Operações:
+	criar_nro:
+		Entrada: dois doubles, um para a parte real e outro para a imaginaria
+		Pré-condição: nenhuma
+		Processo: aloca uma estrutura do tipo complexo e atribui os valores dados.
+		Saída: endereço para estrutura do tipo complexo, em sucesso, NULL, em fracasso
+		Pós-condição: os campos da estrutura foram preenchidos com os valores passados
+		
+	libera_nro:
+		Entrada: ponteiro para ponteiro do tipo complexo
+		Pré-condição: nenhuma
+		Processo: desaloca a estrutura
+		Saída: nenhuma
+		Pós-condição: a estrutura foi desalocada.
+	
+	soma:
+		Entrada: dois endereços para estruturas do tipo complexo
+		Pré-condição: ambos endereços precisam ser válidos.
+		Processo: aloca uma terceira estrutura, realiza a soma e atribui o resultado a essa nova estrutura.
+		Saída: o endereço da terceira estrutura, em sucesso, NULL, em fracasso
+		Pós-condição: nenhuma
+	
+	sub:
+		Entrada: dois endereços para estruturas do tipo complexo
+		Pré-condição: ambos endereços precisam ser válidos.
+		Processo: aloca uma terceira estrutura, realiza a subtração e atribui o resultado a essa nova estrutura.
+		Saída: o endereço da terceira estrutura, em sucesso, NULL, em fracasso
+		Pós-condição: nenhuma
+		
+	mult:
+		Entrada: dois endereços para estruturas do tipo complexo
+		Pré-condição: ambos endereços precisam ser válidos.
+		Processo: aloca uma terceira estrutura, realiza a multiplicação e atribui o resultado a essa nova estrutura.
+		Saída: o endereço da terceira estrutura, em sucesso, NULL, em fracasso
+		Pós-condição: nenhuma

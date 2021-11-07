@@ -1,0 +1,53 @@
+Nome TAD: LLNO (Lista linear nao ordenada)
+	Dados: um vetor de strings com no máximo 11 caracteres cada, um inteiro indicando a próxima posição livre na lista
+	Lista de operações: criar_lista, lista_vazia, lista_cheia, insere_elem, remove_elem, get_pos, apaga_lista
+	
+Operações:
+	criar_lista:
+		Entrada: nenhuma
+		Pré-condição: nenhuma
+		Processo: Aloca dinamicamente uma estrutura do tipo (struct llno) e seta a variável fim para zero.
+		Saída: tipo ListaStrings
+		Pós-condição: nenhuma
+		
+	lista_vazia:
+		Entrada: tipo ListaStrings
+		Pré-condição: nenhuma
+		Processo: verifica se a lista está vazia
+		Saída: 0, caso não esteja, 1, caso esteja
+		Pós-condição: nenhuma
+
+	lista_cheia:
+		Entrada: tipo ListaStrings
+		Pré-condição: nenhuma
+		Processo: verifica se a lista está cheia
+		Saída: 0, caso não esteja, 1 caso esteja
+		Pós-condição: nenhuma
+
+	insere_elem:
+		Entrada: tipo ListaStrings, vetor para caracteres
+		Pré-condição: o Tipo ListaStrings precisa conter um endereço válido e a lista não pode estar cheia
+		Processo: insere a string no final da lista, se possível
+		Saída: 0, em fracasso (lista cheia ou endereço invalido), 1, em sucesso.
+		Pós-condição: a lista terá mais um elemento e a flag Fim terá sido incrementada
+
+	get_pos:
+		Entrada: tipo ListaStrings, inteiro indicando a posição a ser retornada
+		Pré-condição: o tipo ListaStrings precisa conter um endereço válido, o inteiro (N) precisa ser 1 <= N <= FIM 
+		Processo: acessa a posição passada, se existente.
+		Saída: um endereço para caracteres, contendo o endereço da string, em sucesso, ou NULL, em fracasso
+		Pós-condição: nenhuma	
+
+	remove_elem:
+		Entrada: tipo ListaStrings, vetor de caracteres que será removido
+		Pré-condição: o tipo ListaStrings precisa conter um endereço válido e a lista não pod estar vazia
+		Processo: procura pela primeira ocorrência da string passada e a remove.
+		Saída: 0, em fracasso, 1, em sucesso
+		Pós-condição: um elemento terá sido retirado da lista e a flag Fim terá sido decrementada
+
+	apaga_lista:
+		Entrada: ponteiro para o tipo ListaStrings
+		Pré-condição: nenhuma
+		Processo: desaloca a lista apontada pelo tipo ListaStrings e seta ele para NULL
+		Saída: nenhuma
+		Pós-condição: a lista foi desalocada	

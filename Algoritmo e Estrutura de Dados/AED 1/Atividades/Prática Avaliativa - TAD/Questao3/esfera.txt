@@ -1,0 +1,40 @@
+Nome TAD: esfera
+	Dados: duas estruturas do tipo ponto_tri, representando o centro da esfera e um ponto qualquer na superfície da esfera. O raio é a distancia entre esses dois pontos.
+	Lista de operações: criar_esfera, libera_esfera, raio, area, volume
+	
+Operações:
+	criar_esfera:
+		Entrada: seis inteiros, representando as coordenadas de dois pontos, respectivamente: x1, y1, z1; x2, y2, z2
+		Pré-condição: os pontos não podem ser iguais
+		Processo: aloca dinamicamente uma estrutura do tipo Esfera e preenche seus campos.
+		Saída: ponteiro para estrutura do tipo Esfera, em sucesso, NULL, em fracasso.
+		Pós-condição: nenhuma
+
+	libera_esfera:
+		Entrada: ponteiro para ponteiro para estrutura do tipo esfera
+		Pré-condição: nenhuma
+		Processo: desaloca a estrutura apontada e atribui NULL ao ponteiro
+		Saída: nenhuma
+		Pós-condição: estrutura desaloca e ponteiro apontando para NULL
+
+	raio_esfera:
+		Entrada: poteiro para estrutura do tipo Esfera
+		Pré-condição: o pondeiro precisa apontar para um endereço válido
+		Processo: aloca duas estruturas do tipo ponto_tri e preenche elas com os dados retirados da estrutura do tipo esfera e 
+				  então chama a função que calcula distancia entre pontos.
+		Saída: 0, em falha, ou um inteiro não nulo, representando o raio da esfera.
+		Pós-condição: nenhuma
+
+	area_esfera:
+		Entrada: inteiro, representando o raio de uma esfera
+		Pré-condição: o valor do raio precisa ser maior que zero
+		Processo: calcula a area superficial de uma esfera de raio que foi passado
+		Saída: 0, em falha, um double representando o raio
+		Pós-condição: nenhuma
+
+	volume_esfera:
+		Entrada: inteiro, representando o raio de um esfera
+		Pré-condição: o valor do riao precisa ser maior que zero
+		Processo: calcula o volume de uma esfera com o raio passado
+		Saída: 0, em falha, um double representando o raio, em sucesso
+		Pós-condição: nenhuma

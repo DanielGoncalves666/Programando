@@ -1,0 +1,55 @@
+Nome TAD: lista_N_ordenada
+	Dados: um vetor de floats com MAX posições; um inteiro indicando a próxima posição livre.
+	Lista de operações: criar_lista, lista_vazia, lista_cheia, insere_elem, remove_elem, limpa_lista, get_posicao.
+	
+Operações:
+	criar_lista:
+		Entrada: nenhuma
+		Pré-condição: nenhuma
+		Processo: Aloca dinamicamente uma estrutura do tipo (struct lista) e seta a variável fim para zero.
+		Saída: tipo lista_NO
+		Pós-condição: nenhuma
+		
+	lista_vazia:
+		Entrada: tipo lista_NO
+		Pré-condição: o tipo lista_NO deve conter um endereço válido
+		Processo: verifica se a lista está em modo vazio
+		Saída: 0, se a lista não estiver vazia, 1, se estiver vazia
+		Pós-condição: nenhuma
+
+	lista_cheia:
+		Entrada: tipo lista_NO
+		Pré-condição: o tipo lista_NO deve conter um endereço válido
+		Processo: verifica se a lista está cheia
+		Saída: 0, se a lista não estiver cheia, 1, se estiver cheia
+		Pós-condição: nenhuma 
+
+	insere_elem:
+		Entrada: tipo lista_NO, float contendo o elemento a ser inserido.
+		Pré-condição: a tipo lista_NO deve conter um endereço válido e não pode estar cheia
+		Processo: insere o float recebido como novo elemento no final da lista.
+		Saída: 0, em fracasso, 1, em sucesso
+		Pós-condição: a tipo lista_NO recebida agora tem um elemento a mais e o valor de fim foi incrementado
+
+	remove_elem:
+		Entrada: tipo lista_NO, float contendo o elemento a ser removido 
+		Pré-condição: o tipo lista_NO deve conter um endereço válido e a lista não pode estar vazia
+		Processo: percorre a lista e remove a primeiro ocorrência do float passado
+		Saída: 0, em fracasso, 1, em sucesso
+		Pós-condição: a lista teve um elemento removido e o campo fim foi decrementado
+
+	limpa_lista:
+		Entrada: ponteiro para o tipo lista_NO
+		Pré-condição: nenhuma
+		Processo: seta a lista para o modo vazio
+		Saída: nenhuma
+		Pós-condição: a estrutura lista está setada como vazia
+
+	get_posicao:
+		Entrada: tipo Lista_NO, inteiro indicado a posição que deve ser retornada
+		Pré-condição: o tipo lista_NO deve conter um endereço válido, o inteiro passado não pode ser negativo 
+			ou nulo, e nem maior ou igual a MAX. (essas verificações precisam ser feitas antes da função ser 
+			chamada)
+		Processo: percorre a lista e retorna o valor armazenado na posição inteiro + 1
+		Saída: o valor armazenado na posição solicitada, em sucesso.
+		Pós-condição: nenhuma
