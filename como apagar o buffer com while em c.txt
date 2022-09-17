@@ -1,0 +1,1 @@
+while ((tipo = getchar()) != '\n' && tipo != EOF);

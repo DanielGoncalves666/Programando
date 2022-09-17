@@ -1,0 +1,19 @@
+--------------------------- Geral ----------------------------------------------------
+
+function nomeDaFuncao()
+{
+
+}
+
+const --> constante
+
+<script src="script.js"></script> 
+	Para incluir o script no html
+
+
+
+--------------------------- Funções ---------------------------------------------------
+sec1 = document.getElementsByClassName('nome da classe') --> retorna os elementos que possuem a classe especificada
+	   document.querySelectorAll('simboloNome') --> retorna todos os elementos da id, classe ou outra coisa, mas em formato diferente.
+
+sec1.style.display --> acessa o style do elemento e o atributo display

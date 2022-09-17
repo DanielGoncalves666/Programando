@@ -1,0 +1,75 @@
+--------------------------------------- Geral ---------------------------------------------
+
+
+<link href="style.css" rel="stylesheet"/>
+Para incluir um arquivo css no HEAD do arquivo html.
+
+--------------------------------------------------------------
+id's --> usados para realizar a decoração de UM elemento por meio do css.
+	Exemplo:  <p id="um"></p>
+	
+	No arquivo css:
+		#um{
+		
+		}
+	
+--------------------------------------------------------------
+classes --> usadas para realizar a decoração de dois ou mais elementos por meio do css.
+	Exemplo: <p class="dois"><p>
+	
+	No arquivo css:
+		.dois{
+		
+		}
+		
+---------------------------------------------------------------
+O * indica todos os elementos do arquivo html.
+
+	No arquivo css:
+	*{
+	
+	}
+	
+	
+------------------------------------------ Unidades ---------------------------------------
+px --> pixels
+% --> porcentagem em relação ao tamanho da tela	
+	
+--------------------------------------- Propriedadades -------------------------------------
+height --> altura
+width --> largura
+
+background-color --> cor de fundo
+border: largura estilo cor       --> define três propriedades de uma borda simultaneamente.
+	border-width
+	border-style
+	border-color	
+	
+padding --> é o espaço que separa o conteúdo da borda (espaço interno)
+margin --> é o espaço que separa a borda de outros elementos. (espaço externo)	
+	
+position: relative | absolute | static | fixed | sticky
+	especifica tipo do método de posicionamento utilizado para um elemento	
+	relative --> posiciona o elemento em relação a si mesmo. Ou seja, o ponto zero será o canto superior esquerdo.
+	absolute --> posiciona o elemento em relação ao elemento pai. Ou seja, o ponto zero será o canto superior esquerdo do elemento pai.
+	fixed --> fixa um elemento nas coordenadas determinadas. Ele continua no mesmo lugar mesmo depois de rolar a página. 
+	static --> valor padrão para todos os elementos de um site. Simplesmente significa que os elementos irão seguir o fluxo da página normalmente. 
+				A única boa razão para usar isso explicitamente é para remover um posicionamento previamente definido.
+	
+left: 
+right:
+top:
+bottom:
+	Indicam a distância do canto superior esquerdo para cada um dos lados especificados. 
+	
+display --> especifica o tipo de caixa de renderização usada por um elemento.
+	block --> mostra o elemento como um elemento bloco (começa uma nova linha, e toma toda a largura).
+		algumas tags, como <p> e <section> já são consideradas como blocos.
+	inline --> mostra o elemento como um elemento inline (não começa uma nova linha, e ocupa apenas sua largura).	
+	none --> o elemento é removido
+	grid --> mostra o elemento como um grid container.
+
+grid-template-columns --> usado em conjunto com display: grid
+		determina as colunas na grade. Normalment eusamos 1fr (fração) pra indicar o tamanho de uma coluna
+		repeat(numero_vezes, tamanho)
+	

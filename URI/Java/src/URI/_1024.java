@@ -20,7 +20,7 @@ public class _1024 {
             {
                 if(Character.isLetter(frase.charAt(j)))
                 {
-                    frase.
+                    
                 }
             }
         }

@@ -75,6 +75,10 @@ sudo apt install git --> instala o git na máquina linux
 	git stash list --> mostra os stash feitos
 	git stash pop --> aplica o último stash no repositório
 
+***git reset --soft HEAD~1 --> exclui o último commit, retorna para o anterior e mantém todas as alterações desde o penúltimo commit.
+
+*** git push origin HEAD --force --> força a exclusão do commit no repositório remoto.
+
 // - - - - - - - - - - - - - - Branch - - - - - - - - - - - - - - - - - - - //	
 
 ***git branch --> indica o ramo que o projeto se encontra

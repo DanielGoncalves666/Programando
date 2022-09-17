@@ -1,0 +1,79 @@
+body{
+	font-family: Inter;
+	background-color: #F5F5F5;
+}
+
+section{
+	padding: 0%;
+
+	height: 350px;
+	width: 350px;
+	
+	border-radius: 16px;
+	border-style: solid;
+	border-width: 1px;
+	border-color: black;
+	background-color: #0DC2C4;
+
+	position: absolute;
+	left: calc(50% - 175px);
+	top: calc(50% - 175px);
+}
+
+.login{
+	position: absolute;
+	top: 0px;
+	left: 120px;
+
+	font-size: 40px;
+}
+
+input{
+	height: 40px;
+	width: 280px; /* originalmente seria 300px, mas retirei 10 pra cada padding */
+	padding-right: 10px;
+	padding-left: 10px;	
+	border-radius: 5px;
+	border-style: none;
+
+	font-size: 16px;
+
+	position: absolute;
+	left: 25px;
+}
+
+.i1{
+	top: 130px;
+}
+
+.i2{
+	top: 205px;
+}
+
+.esqueceu{
+	position: absolute;
+	left: 215px;
+	top: 240px;
+
+	font-size: 12px;
+}
+
+.esqueceu a{
+	text-decoration: none;
+	color:black
+}
+
+button{
+	height: 36px;
+	width: 100px;
+	border-radius: 5px;
+	border-style: none;
+
+	position: absolute;
+	left: 125px;
+	top: 285px;
+
+	font-size: 20px;
+	color: #535252;
+	cursor: pointer;
+}
