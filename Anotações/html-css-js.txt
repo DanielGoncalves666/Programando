@@ -6,8 +6,6 @@ O recomendado é escrever um arquivo css e um arquivo javascript e simplesmente 
 O body já vem com um pré-valor de paddng, o qual não é zero
 Se não tirar esse valor default do body e de outras tags talvez não seja possível deixar elas coladas)
 
-O * é para indicar todas as tags(CSS)
-
 
 position: relative --> deixa o container se mover
 	left e top movem o container na quantidade de pixels

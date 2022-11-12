@@ -1,0 +1,57 @@
+Unidades de medidas do CSS
+
+---------------------
+Layout Fixo
+	'px' - pixels
+	
+Layout Fluído
+	'%' - porcentagem
+	'auto' - automático
+	'vh' - viewport height
+	'vw' - viewport width
+	
+	max-width --> limita a largura máxima
+	
+----------------------
+Textos Fixos
+	1px = 0.75pt
+	16px= 12pt
+
+Textos Fluídos	
+	'em' - multiplicado pelo pai
+	'rem' - multiplicado pelo root (html, body)
+	
+---------------------
+GRID:
+
+minmax(250px, 1fr) --> estabelece minimo e máximo
+repeat(auto-fit, minmax(250px, 1fr)) 
+	auto-fit --> adapta a quantidade de colunas/linhas de modo automático
+	
+----------------------	
+Imagens
+
+Aplicar largura de 100%
+usar transform pra colocar a imagem no meio
+	
+1:17:00
+	
+---------------------	
+MEDIA QUERIES
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+inclue-se esta linha pra habilitar o uso de media queries	
+
+
+@media (max-width: 768px){
+	html{
+		font: 80%;
+	}
+}
+ --> aplica o que tiver dentro até a largura máxima especificada
+ 	Importnate colocar os valores menores no fim da página, para que eles tenham maior força e sejam aplicados.
+ 
+order --> define a ordem de aparecimento na página
+ 
+ 
+ 

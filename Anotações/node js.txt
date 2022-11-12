@@ -1,0 +1,144 @@
+	Plataforma que permite que se execute javascript do lado do servidor (Backend)
+	Não é uma linguagem de programação.
+	
+---------------------------------- NPM -----------------------------	
+	
+	npm --> gerenciador de pacotes pro node
+		Permite instalar bibliotecas de terceiros e fornecer bibliotecas.
+		O Yarn é mais rápido que o npm.
+	
+	yarn init -y
+	npm init --> cria um novo projeto.
+			Cria um arquivo package.json, o qual armazena as dependências do projeto.
+devDependencies --> dependências apenas no ambiente de desenvolvimento
+dependencies --> dependências para a produção
+			
+		Quando instalamos uma dependência, uma bosta chamada node_modules é criado, onde todas as dependências e suas dependências são armazenadas.
+				
+--------------------------------- Yarn -------------------------------				
+						
+---------------------------------- Node -----------------------------	
+	
+---------------- Características
+	
+	Segue a arquitetura Event-loop.
+		O node processa os eventos enquanto está em loop, escutando o tempo todo por novos eventos.
+		Single-thread. Biblioteca libuv permite usar mais threads.
+		Input e Output não bloqueantes.
+	
+	Call stack --> pilha de eventos
+	
+---------------- Frameworks do Node
+	expressJS
+		npm install express --> instala o express como dependência
+	
+---------------- Execução	
+	
+	node nomeArquivo --> executa
+	
+	node run nomeScript --> para rodar o script especificado
+	yarn run nomeScript	
+	
+---------------- nodemon (atualização automática)
+	O node não atualiza a aplicação no browser sempre que ocorrem alterações no código fonte. Para fazer isso precisamos da biblioteca nodemon.
+
+	yarn add nodemon -D  (instalação)
+		o -D indica que é um dependência dev
+	yarn nodemon arquivoJS (execução)
+
+--------------- Outros
+	pacote fs --> filesystem
+	uuid4 --> pacote para id aleatoria
+
+--------------------------------- API Rest --------------------------------
+	Reposição feita por um cliente.
+	Resposta retornada através de uma estrutrura de dados.
+	Cliente recebe a resposta e processo o resultado.
+
+
+--------- Rotas
+As rotas utilizam métodos HTTP:
+
+GET, POST, PUT e DELETE são os métodos http
+	users, no exemplo abaixo, é a rota(recurso)
+
+
+GET --> buscar informação 
+	http://minhaapi.com/users
+	
+POST --> criar informação
+	http://minhaapi.com/users	
+	
+PUT/PATCH --> alterar informação
+	http://minhaapi.com/users/1
+	
+	usamos PUT para atualizar tudo
+	PATCH para coisas específicas
+
+DELETE --> deletar informação
+	http://minhaapi.com/users/1
+
+
+----- Body
+	Funciona para POST/PUT.
+	Usamos para enviar os dados. Seu uso é para não poluir a URL e para não mostrar campos sensíveis, como senhas.
+	É o corpo da requisição.
+	
+----- Headers
+	São informações adicionais que não tem a ver com o conteúdo da requisição. 
+	Funciona em todos os métodos.
+	
+------------ HTTP Codes
+	Toda resposta que o backend retorna vem com um HTTP code junto.
+	É um código de três dígitos numéricos que informam o status daquela resposta.
+	
+	1xx: informativo (quase nunca usa)
+	2xx: sucesso
+		200: sucesso
+		201: criado
+	3xx: redirecionamento
+		301: url mudada permanentemente.
+		302: mudou mas pode retornar
+	4xx: erros do cliente (frontend)
+		400: bad request, faltou algo
+		401: sem autorização
+		404: NOT FOUND
+	5xx: erros de servidor
+		500: erros internos do servidor
+	
+--------------------------------- Parâmetros -----------------------------
+
+Tipos de parâmetros --> formas do frontend enviar algum tipo de informação
+
+	+ Query Params: principalmente para filtros e paginação
+		Só são usados em métodos GET.
+		Sintaxe:
+			?nome=valor
+		
+			Exemplo:
+				GET http://api.com/company/1/users?page=2
+					page é um query param e seu valor é dois
+					
+			Usamos o & para adicionar mais parâmetros
+				?page=2&local=3	
+				
+		Usamos request.query para obter esses parâmetros.	
+	
+	+ Route Params: identificar recursos (Atualizar/Deletar)
+		:id é um route param
+	
+		request.params --> obtemos os route params
+	
+	+ Request Body: utilizado para o resto. Conteúdo na hora de criar ou editar um recurso. (JSON)
+
+-------------------------------- Middleware ------------------------------
+	
+	Interceptador de requisições que pode interromper totalmente a requisição ou alterar dados da requisição.
+	
+	Um middleware é uma função que recebe dois parâmetros similares com as rotas, request e response. Por causa deste padrão, todas as rotas podem ser consideradas middlewares: elas interceptam as requisições, pegam os dados da requisição e podem retornar algo para o cliente (os middlewares também podem fazer isso.
+	Além destes dois parâmetros, um middleware que não é rota recebe um terceiro parâmetros: next. Se eu não chamar a função next() no final	do middleware o próximo middleware não será executado. 
+	Coisas depois do next() são executadas ( se vc não tiver usado o next junto com o return).
+	
+	Geralmente utilizamos um middleware pois queremos que um trecho de código seja disparado de forma automática em uma ou mais rotas.
+
+	

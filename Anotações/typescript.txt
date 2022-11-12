@@ -1,0 +1,27 @@
+	Linguagem baseada em javascript. Adiciona coisa à mais, como tipagem.
+	O browser ou o node não entendem Typescript, ele precisa ser convertido em javascript antes. Sua utilidade está durante o processo de programação.
+	
+	Typescript possui tipagem fraca. Devemos explicitamente informar os tipos apenas quando o editor não puder determinar automáticamente.
+	
+	yarn add typescript -D --> em um projeto javascript, adicionamos o typescript
+	
+	Depois precisamos inicializar:
+		yarn tsc --init
+	
+	Com javascript puro o visual studio faz autocomplete, com typescript será necessária adicionar uma dependência de desenvolvimento. Exemplo:
+				yarn add -D @types/express
+				
+	Antes de executar um código typescript precisamos convertê-lo para javascript.
+		yarn tsc
+
+	Depois da conversão, executamos o javascript normalmente.
+	
+	
+	
+	
+	O editor nos avisará quando for necessário adicionar tipagem.
+	Maneiras de definir tipos:
+		atribuir um valor padrão pra variavel.
+			user = "" --> entende que é uma string
+		indicar o tipo
+			email: string

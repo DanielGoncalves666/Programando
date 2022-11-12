@@ -1,0 +1,801 @@
+
+console.log("") --> imprime o conteúdo
+	Utiliza do mesmo princípio do System.out.println e a concatenação para imprimir múltiplos dados
+	Outra maneira é usando interpolação:
+	console.log(`o ${variavel} tem ${variavel2}`)
+
+------------ Inserção no htlm -------------
+<script src=""></script>
+	Normalmente no body. Colocar no final melhora a velocidade.
+	
+------------ Comentários ------------------
+//
+/* */
+
+------------ Tipos de Dados ---------------
+
++String --> cadeia de caracteres
+	""
+	''
+	`` --> template literals
+				permite strings de múltiplas linhas
+				provê uma maneira fácil de interpolar variáveis e expressões em strings. O método é chamado de interpolação e sua sintaxe é ${...}.
+	
+Se colocarmos aspas simples, então colocamos a string delimitada por aspas duplas. O inverso também vale.
+As crases permitem usar tanto simples como duplas no meio do texto. Além disso, elas permitem múltiplas linhas. Por fim, permitem incluir expressões dentro da própria string.
+O caracter \ torna caracteres especiais como ", ' e o próprio \ em caracteres normais. Além disso, podemos usar o \ para quebrar uma string em duas linhas ( no código).
+	
+*** String Methods.	
+		Apesar de Strings serem dados primitivos, o javascript considera elas como objetos quando executa métodos
+		Todos os métodos de strings retornam uma nova string, não alterando a string que chamou o método.
+		
+		string.length --> comprimento da string	
+			  .slice(start, end) --> retorna o pedaço da string especificado. (end não é incluso)
+			  								se um dos parâmetros for negativo, é contado desde o fim da string.
+			  								ao omitir o últmimo parâmetro, irá pegar até o fim da string
+			  .substring(start, end) --> similiar à slice() com a diferença que valores negativos são tratados como 0.
+			  .substr(start, length) --> novamente similar, apenas muda o segundo parâmetro.
+			  								se um dos parâmetros for negativo, é contado desde o fim da string.
+			  .replace("isso","por isso") --> substitui um determinado valor com outro. Substitui apenas o primeiro que encontrar.
+												/palavra/i --> serve para ignorar o case sensitive
+												/palavra/g --> para substituir todas os padrões que encontrar
+			  .toUpperCase()
+			  .toLowerCase()
+			  .concat() --> para concatenar várias strings as separa, em ordem, por virgula
+			  .trim() --> remove espaços do fim e inicio
+			  .trimStart()
+			  .trimEnd()
+			  .padStart(quantidade,"string") e padEnd(quantidade, "string") --> adiciona no início ou fim, respectivamente, a string especifica caso o comprimento da string que chamou o método for menor que quantidade. Caso os caracteres em string não sejam suficientes, começa a repetí-los.
+			  .chatAt(num) --> retorna o caractere no índice especificado
+			  					retorna uma string vazia se estiver além do comprimento da string
+			  .charCodeAt(num) --> retorna o unicode do caractere no índice especificado
+			  [] --> retorna undefined se estiver além do comprimento da string
+			  		 apenas leitura
+			  .split("") --> quebra a string nos caracteres passados como parâmetro como uma string
+			  				"" retornará um array de caracteres
+			  				se o separador for omitido retornará um array com a string como único elemento.
+			  .join("") --> junta strings separadas. Recebe como argumento o separador das diferentes strings na string final.
+			  
+			  .indexOf() --> retorna o index da primeira ocorrência da string passada como argumento.
+			  				 retorna -1 se não encontrar nada
+			  				 aceita um número como segundo parâmetro, o qual especifica o index de início da busca
+			  .lastIndexOf() --> retorna o index da última ocorrência da string passada como argumento.
+			  				retorna -1 se não encontrar nada
+			  				 aceita um número como segundo parâmetro, o qual especifica o index de início da busca, mas busca desse index até o inicio da string, pois o método procura do fim para o começo.
+			  .search() --> similar ao indexOf, mas não aceita segundo parâmetro e aceita expressões regulares
+			  .match() --> procura na string usando uma expressão regular
+			  			retorna um array, contendo os itens encontrados. ( /g necessário para retornar todos, senão retonar apenas o primeiro.
+			  .includes() --> retorna verdadeiro se contém uma determina substring	 
+			  				  aceita um segundo parâmetro, especificando o index de inicio		
+			  .startsWith() --> retorna verdadeiro se a string começa com o valor passado.
+			  					aceita um argumento opcional, um número, indicando o início da busca.
+			  .endsWith() --> retorna verdadeiro se a string termina com o valor passado.
+			  					aceita um argumento opcional, um número, indicando a largura para procurar(desde o início)
+
+			 
++number --> número
+	inteiros
+	reais
+	not a number (NaN)
+	Infinity --> infinito, escrito desta forma.
+	
+	expoentes: 123e5 --> 123 . 10^5
+	
+	Números em javascript são sempre floats de 64 bits.
+	A adição de um número e uma string resulta na concatenação.
+		20 + 30 + "40" = "7040"
+		"20" + 30 + 40 = "203040"
+		O interpretado trabalha da esquerda para a direita.
+	
+	Operações com números em forma de string funcionam, menos na adição.
+	
+	isNaN(number); --> true, se não for um número
+	Number() --> retorna um número, convertido a partir de seu argumento.
+		Quando uma data é passada retorna a quantidade de milisegundos desde 1.1.1970
+	parseFloat() --> analisa a string passada e retorna um número. Espaços são permitidos. Apenas o primeiro número é retornado.
+	parseInt() --> analisa a string passada e retorna um número inteiro. Espaços são permitidos e apenas o primeiro número é retornado
+
+*** Number methods
+	Assim como no caso de strings, métodos estão disponíveis para números no javascript, mesmo que eles sejam primitivos.
+	
+	number.toString() --> retorna o número como uma string. (funciona com variáveis, literais e expressões.
+		  .toExponential() --> retorna uma string, com o número arredondado e escrito usando notação exponencial.
+		  			Recebe um parâmetro opcional, indicando a quantidade de casas decimais. Se não for especificado, javascript não irá arredondar.
+		  .toFixed(number) --> retorna uma string, com o número escrito com uma quantidade específica de casas decimais.
+		  .toPrecision(number) --> retorna uma string, com o número escrito com um determinado comprimento.
+		  .valueOf() --> retorna um número como um número. (util para objetos number)
+		  
+	Number.MAX_VALUE
+	Number.MIN_VALUE
+	Number.POSITIVE_INFINITY --> retornado em overflow
+	Number.NEGATIVE_INFINITY --> retornado em overflow
+	Number.NaN
+		  			
+	
++boolean --> booleano
+	true
+	false
+	
++Undefined
+	undefined --> indefinido
+		não existe
+
++Null
+	null --> nulo (objeto sem nada)
+	diferente de undefined
+		Existe, mas não tem nada dentro
+		
++Object
+	Objeto, com propriedades/atributos e funcionalidades/métodos.
+	Como criar um objeto:
+	{
+		propriedade: "valor",
+		outra: "valor2",
+		
+		andar: function(){
+			console.log('andar')
+		}
+	}
+	
+	O par nome: valor é chamado de propriedade. Podemos acessar as propriedades de um objeto de duas maneiras:
+		objeto.propriedade ou objeto["propriedade"]
+		
+	Acessamos métodos assim: 
+		objeto.metodo();
+		Sem o parêntesis irá retornar a definiçao da função.
+		
+	Ao que o this se refere depende de onde estiver sendo usado ou chamado.
+		Sozinho ou em uma função, , se refere ao objeto global.
+		
+	Comparar dois objetos sempre retorna falso.
+	
++Array
+	vetor
+	
+	const array = [item1, item2, ...];
+	const array = new Array(item1, item2, ...);
+					  Array(10); --> cria um array com 10 elementos indefinidos
+		são equivalenteas, mas por tempo de execução é melhor usar a declaração com literais.
+	
+	Entre colchetes, items separados por vírgula.
+	Os tipos dos elementos podem ser diferentes.
+	É prática comum declarar arrays usando const. Arrays declarados assim não podem ser re-atribuidos. A keyword const não define um array constante, é possível mudar os elementos, ela define uma referência constante para um array.
+
+
+----- Métodos para arrays
+	
+	array.length --> número de elementos. (propriedade)
+		 .sort() --> ordena o array
+		 .push() --> adiciona um novo elemento no fim do array (retorna o novo comprimento)
+		 .pop() --> remove o último elemento do array (retorna o elemento) 
+		 .shift() --> remove o primeiro elemento e move todos os outros um índice para baixo. (retorna o elemento) 
+		 .unshift() --> adiciona um novo elemento no ínicio do array e move os outros elementos um índice para cima.
+		 .toString() --> converte o array em uma string, com os elementos separados por vírgula
+		 			Quando é esperado um tipo primitivo, o javascript automáticamente converte um array em uma string com os elementos separados por vírgula.
+		 .join() --> funciona que nem o toString, mas é possível especificar o separador.
+		 .concat() --> concatena um número qualquer de arrays. (retorna o novo array e não altera os arrays de origem)
+		 .splice(where, howManyToRemove, elementsToBeAdded) --> adiciona novos elementos a um array
+		 			retorna um array com os elementos removidos
+		 			Podemos utilizar o splice para remover elementos sem deixar buracos. 
+		 .slice(start, end(opcional)) --> retorna um array contendo os elementos no intervalo
+		  			end não é incluso
+		 .sort() --> ordena um array de forma alfabética (ordena os valores como strings, por padrão)
+		 		Para ordenar inteiros devemos passar uma função de comparação para sort. Essa função deve retornar números positivos, nulos ou negativos. 
+		 			Se negativo, coloca o primeiro valor antes, se positivo, o segundo valor antes e se nulo, não altera.
+		 			
+		 		Após ordenar de forma ascedente, basta usar índices para encontrar o maior e o menor valor.
+		 .reverse() --> inverte os elementos de um array
+		 
+		 
+----- Iteradores 		 
+		 .forEach(funcao) --> dado um array, aplica funcao para cada um de seus elementos
+		 					function myFunction(value)
+		 .map(funcao) --> cria um novo array ao aplicar a função em cada um dos elementos do array original. Não executa a função em arrays sem elementos e não altera o array original.
+		 .filter(funcao) --> cria um novo array com os elmentos que passarem no teste dado como argumento.
+		 .reduce(funcao) --> executa uma função no array de modo a produzir um único valor. O método trabalha da esquerda para direita no array. Um exemplo seria encontrar o somatório dos elementos de um array.
+		 					function myFunction(total,value)
+		 	O método pode aceitar um segundo argumento, indicando o valor inicia.
+		 .reduceRight(funcao) --> mesmo que o anterior, mas trabalha da direita para a esquerda.
+		 .every(funcao) --> checa se todos os elementos do array passam em um teste.
+		 .some(funcao) --> checa se alguns valores passam no teste
+		 .indexOf(item, start) --> procura por um elemento no array e retorna sua posição (retorna -1 se não encontrar). Retorna a primeira ocorrência
+		 .lasIndexOf(item, start) --> mesmo que o anterior, mas retorna a última ocorrência.
+		 .find(funcao) --> retorna o valor do primeiro elemento que passa na função de teste
+		 .findIndex(funcao) --> retorna o index do primeiro elemento que passa no teste.
+		 .keys() --> retorna um array iterador object com as chaves de um array.		  
+		 .entries() --> retorna um array iterator object com os pares chave/valor
+		 .includes(item) --> checa se um elemento está no array
+		 	
+		 
+		 
+	Array.isArray(vetor) --> true se vetor é um array.
+	Array.from(object) --> retorna um array à partir de qualquer objeto com comprimento ou que seja iterável.
+	
+	Math.max.apply(null, [1,2,3]) ou (1,2,3) --> encontra o maior elemento
+	Math.min.apply(null, [1,2,3]) ou (1,2,3) --> encontra o menor elemento
+	
+--------- 
+	Primitivos --> não são objetos.
+				   são imutáveis.
+		String
+		Number
+		Boolen
+		undefined
+		Symbol
+		BigInt
+		
+	Estruturais
+		Object
+			Array
+			Map
+			Set
+			Date
+			...
+		Function
+		
+	Estruturais primitivos
+		null
+
+------------------------
+
++ Date Objects
+	
+	Por padrão, o javascript usa a time zone do browser.
+	Javscript conta os meses de 0 até 11. Especificar valores maiores causará overflow pro próximo ano. Mesma coisa com dia.
+	Para ano, um ou dois dígitos serão interpretados como 19xx.
+	Por padrão, a impressão de data é o texto completo em string.
+	
+	Existem 9 maneiras de se criar um objeto de data:
+	
+	new Date() --> cria um Data Object com a data atual
+	new Date("2022-03-25")
+	new Date(year,month,day,hours,minutes,seconds,ms)
+		year
+		year, month
+		year, month, day
+			e assim por diante.
+	
+	new Date(milliseconds)
+	
+	Existem três tipos de formatos para entrada de datas:
+		ISO Date	"2015-03-25" (The International Standard)
+		Short Date	"03/25/2015"
+		Long Date	"Mar 25 2015" or "25 Mar 2015" 
+	
+	
+---- Métodos
+		.toString()
+		.toDateString() --> mesmo que o anterior, mas é mais resumido.
+		.toUTCString() --> converte uma data para um string usando o padrão UTC.
+		.toISOString()--> 									usando o padrão ISO.
+		
+		Existem métodos de get para cada um dos elementos de uma data:
+			.getFullYear()
+				.getYear() --> deprecated
+			.getMonth()
+			.getDate() --> dia 1 - 31
+			.getDay() --> weekday 0 - 6
+			etc...
+			
+		.getTime() --> número de millisecond desde 1970
+		.getTimezonaOffset() --> retorna a diferença em minutos entre o a hora local e UTC time.
+		
+		Existem métodos de set para cada um dos elementos de uma data:
+			.setDate() --> dia 1 - 31
+			.setFullYear()
+			.setTime() --> milliseconds desde 1970
+			etc...
+		
+		Date.parse() --> pega uma string (de data válida) como argumento e converte em milliseconds
+		Date.now() --> mesma coisa que getTime(), mas usa o tempo atual
+		
+-----------------------
++ Math Object
+	Não possui construtor, é um objeto estático		
+		
+	Math properties:
+		Sintax: Math.property
+		
+		Math.E        // returns Euler's number
+		Math.PI       // returns PI
+		Math.SQRT2    // returns the square root of 2
+		Math.SQRT1_2  // returns the square root of 1/2
+		Math.LN2      // returns the natural logarithm of 2
+		Math.LN10     // returns the natural logarithm of 10
+		Math.LOG2E    // returns base 2 logarithm of E
+		Math.LOG10E   // returns base 10 logarithm of E	
+	
+	Math methods:
+		Sintax: Math.method(number)
+			Math.round(x)	Returns x rounded to its nearest integer
+			Math.ceil(x)	Returns x rounded up to its nearest integer
+			Math.floor(x)	Returns x rounded down to its nearest integer
+			Math.trunc(x)	Returns the integer part of x (new in ES6)
+	
+			Math.sign(x) --> retorna se x é negativo, nulo ou positivo
+			Math.pow(x,y)
+			Math.sqrt(x)
+			Math.abs(x)
+			Math.sin(x) --> em radianos
+			Math.cos(x)
+			Math.min(lista de valores)
+			Math.max(lista de valores)
+			
+			Math.random() --> retorna um número aleatório entre 0 e 1(exclusivo)
+				// Returns a random integer from 0 to 9:
+				Math.floor(Math.random() * 10);
+	
+	
+			Math.log(x) --> logaritmo natural
+			Math.log2(x) --> base 2
+			Math.log10(x) --> base 10
+			
+------------------- Variáveis ------------------
+Como criar variáveis:
+	var --> declara uma variável como global. Evita-se usá-lo no js moderno.
+		var clima = "Quente"
+		
+	let --> mais moderno do que em relação ao var.
+		let clima = "Quente"
+		
+	const --> não pode mudar seu valor durante o programa. Precisam ter seu valor dado no momento da declaração. Mas podemoos redeclarar.
+			const clima = "Quente"
+		Sempre declarar variáveis que sabemos que seu valor não mudará usando const. 
+		É possível mudar os elementos de um array constante. Mas é impossível reatribuir o array. A mesma coisa com objetos constantes.
+		
+	Se não termos um valor para uma variável, o seu valor será undefined.
+
+	JS é fracamente tipado. Logo, o tipo de um variável pode mudar em meio ao programa.
+	Hoisting --> pega a declaração da variável e coloca no início do bloco. Logo podemos ter undefined mesmo antes da declaração de uma variável. Além disso, mesmo se tiver fora do escopo. Isso ocorre com variáveis var.
+	O mesmo não ocorre com let e const. As variáveis são disponíveis apenas no escopo local e não podem ser referenciadas antes de serem declaradas.
+	
+	JS é case-sensitive. Aceita a cadeia de caracteres Unicode.
+	Camel_case
+	
+	É possível redeclarar variáveis usando var, sendo que o valor delas não são apagados. O mesmo não é possível usando let ou const.
+	
+	
+------------------ Funções ------------------------
+
+Obs: dá para criar uma variável dentro de uma função sem usar as palavras chaces
+	e ela acabar por existir em todo o código. Não faça isso.
+	
+
+	Declaração de funções:
+function nomeFuncao(){
+	// código
+}
+
+	Execução:
+nomeFuncao()
+
+	Parâmetros são colocados entre os parêntesis e não é necessário declarar tipo de retorno.
+
+---------- Function expression or Function anonymous
+
+const sum = function(){
+
+}
+
+	Execução:
+sum()
+
+--------- Parâmetros e argumentos
+
+const sum = function(number1, number2){
+
+}
+
+sum(2,3) --> 2 e 3 são argumentos
+	--> number1 e number2 são parâmtros
+	
+--------- Retorno
+	Nesta construção sum não receberá total, sum receberá a função.
+	
+const sum = function(number1, number2){
+	let total = number1 + number2
+	return total
+}
+	
+	Para receber total, devemos criar uma variável e:
+	const retorno = sum(1,2)
+
+--------- Function Hoisting
+	Hoisting ocorre com funções também. 
+		Porém não ocorre com funções do tipo Function expression
+
+--------- Arrow Function ( tipo expression)
+
+const sayMyname = () => {
+	console.log('Daniel')
+}
+
+Maneira mais enxuta de se declarar uma função
+
+
+--------- Callback function
+	É uma função passada como parâmetro
+	
+--------- function constructor
+	Expressão new (usada na frente da função, automáticamente retornando um objeto)
+	Cria um novo objeto
+	this keyword
+	
+--------- Global Function
+	Funções globais podem ser executadas via console
+	
+	globalThis.nomeFuncao = nomeFuncao
+	globalThis e window são equivalentes no console
+------------------------ Manipulando Dados -----------------------
+
+------ Prototype
+Javascript é dita como uma linguagem baseada em protótipos
+	
+Cadeia de protótipos
+__proto__ --> propriedade de um objeto que nos permite acessar todas as propriedades de uma maneira bem clara.
+
+------ Type conversion e Type coersion
+
+Type conversion --> explicitamente altera um dado para outro
+Type coersion --> o javascript força a troca
+	'9' + 5 --> '9' + '5' --> '95' Type coersion
+	 Number('9') + 5 --> 9 + 5 --> 14 Type conversion
+
+------ Manipulando strings e Números
+String para número
+	Number(string)
+	
+Numero para string
+	String(number)
+
+Fixar casas decimais	
+	number.toFixed(N) --> fixa a quantidade de casas decimais de number em N	
+	
+Criando array com construtor
+	new Array() --> como argumentos recebe os valores
+	
+	.length funciona com arrays
+	
+Strings para Arrays
+	Array.from("string")
+	
+Manipulando Arrays
+	Adicionar um item no fim
+		vetor.push("")
+	Adicionar no começo
+		vetor.unshift("")
+	Remover do fim
+		vetor.pop()
+	Remover do começo
+		vetor.shift()
+	Pegar alguns elementos do array
+		vetor.slice(1,3) --> começa em 1, não 0
+	Remover 1 ou mais elementos
+		vetor.splice(começo, quantidade) --> começa em 0
+	Encontrar posição de um elemento
+		vetor.indexOf("")
+		
+------------------------ Expressões e Operadores -----------------------	
+
+Toda expressão no javascript pode ou não terminar com ;
+
+new --> expressão para criar um novo objeto
+
+typeof nomeVariavel --> retorna o tipo da variável
+
+delete objeto.propriedade --> procura pela propriedade especificada de um objeto e a deleta.
+
+------- Operadores Aritméticos
+	Operações padrão não sofrem alteração (incluindo resto e incremento/decremento)
+	Exponencial: **
+	
+------- Operadores de Comparação
+	Igual a: ==      
+	Diferente d: !=
+		(comparam apenas o valor)
+		1 == "1"  --> true
+		1 != "1"  --> false
+	
+	Estritamente igual a: ===
+	Estritamente diferente de: !==
+		(comparam o valor e o tipo)
+		1 === "1" --> false
+		1 !== "1" --> true
+
+--------
+Operadores de maior e menor se mantêm.
+Operadores de atribuição se mantêm.
+Operadores lógicos se mantêm.
+
+-------- Operadores de String
+	Comparação --> usamos o ==
+	Concatenação --> usamos o +
+					+= funciona, com o mesmo princípio
+
+-------- Falsy e Truthy
+
+Falsy --> quando um valor é considerado false em contextos onde um booleano é obrigatório
+	false
+	0 
+	-0
+	""
+	null
+	undefined
+	NaN
+	
+Truthy --> quando um valor é considerado true me contetos onde um booleano éobrigatório
+	true
+	{}
+	[]
+	1
+	3.23
+	"0"
+	"false"
+	-1
+	Infinity
+	-Infinity
+	
+Em ambos os casos ocorre type coersion
+
+------ Nullish Coalescing Operator (??)
+	Retorna o segundo argumento se o primeiro é null ou indefinido. Caso contrário, retorna o primeiro.
+		name ?? text
+		
+------ Optional Chaining Operator (?.)
+	Retorn undefined se um objeto é undefined ou null, invés de disparar um erro.
+
+--------------------------- Controle de Fluxo -----------------------------
+
+----- if...else
+
+if(true){
+
+} else {
+
+}
+
+----- Switch
+
+switch(expression) {
+	case 'a':
+		//código
+		break;
+	default:
+		break;
+}
+
+
+----- Throw
+	Disparar erros
+	
+function sayMyName(name = ""){
+	if(name === ""){
+		throw new Error("Nome é necessário")
+	}
+}
+
+podemos disparar qualquer mensagem, não apenas um erro
+
+----- Try/Catch
+try{
+	sayMyName()
+} catch(e){
+	console.log(e) --> vai imprimir "Nome é necessário"
+}
+
+Um erro que seja disparado e não pego irá ocasionar um erro de Uncaught
+
+------------------------- Estruturas de repetição ----------------------
+
+break e continue --> mesmos comportamentos
+
+
+----- For
+for(let i = 0; i < 10; i++){
+
+}
+
+----- While
+while(true){
+	break;
+}
+
+do{
+
+}while(true);
+
+
+----- for...of
+
+let name = 'Mayk'
+
+for(let char of name){
+	console.log(char)
+}
+	// Irá imprimir Mayk letra a letra
+	Pode ser aplicado em arrays também.
+
+----- for...in
+	loop em cima das propriedades de um objeto
+	Pode ser aplicado em arrays tmb. (apenas se a ordem n for importante)
+	
+let person = {
+	name: 'John',
+	age: 30,
+	weight: 88.6
+}
+
+for(let property in person){
+	console.log(property)     
+	console.log(person[property])
+}
+	a variável property irá armazenar o identificador de uma propriedade a cada iteração
+	o segundo console faz acesso ao valor da propriedade
+	
+------------------------- DOM (Document Object Model) --------------------------
+É o HTML convertido para um Objeto JavaScript
+API que representa e interage com o HTML.
+
+Serve para manipular o HTML com o JavaScript
+
+**** getElementById
+	const element = document.getElementById('nome-do-Id');
+
+**** getElementsByClassName
+	const elements = document.getElementsByClassName('nome-da-classe');
+	
+	elements é uma html colection.
+
+**** getElementsByTagName
+	const elements = document.getElementsByTagName('nome-da-tag');
+	
+	elements é uma html colection.
+	
+**** querySelector (seletores usados no css)
+	const element = document.querySelector('.exemplo'); 	
+	
+	Pega o primeiro elemento com o seletor dado.
+
+**** querySelectorAll
+	const elements = document.querySelectorAll('.exemplo');
+	
+	Pega todos os elementos com o seletor dado.
+	elements é um NodeList. Possível usar o forEach
+
+------------------- 
+	Dado um element obtido por algum dos métodos acima
+	
+**** textContent --> retorna todo conteúdo visível, incluindo o de nós filhos
+	element.textContent = 'Texto'; ---> altera o conteúdo do elemento
+				       += 'Texto'; ---> concatena a string no final do conteúdo
+
+	O método também retorna o texto quando invocado em outras situações.
+
+**** innerText --> retorna o texto visível em um nó, não incluindo nós filhos
+	element.innerText = 'Texto'; --> muda o texto interno do elemento html
+
+**** innerHTML
+	element.innerHTML = '<small>texto</small>' --> se quisermos usar html precisamos usar este método
+
+**** value
+	element.value = "alterando-valor"
+
+	Manipula o valor em um input.
+
+**** setAttribute
+	element.setAttribute('nome-atributo', 'valor');
+
+	O método também retorna o valor.
+	
+**** removeAttribute
+	element.removeAttribute('nome-atributo');
+	
+	Remove o atributo.
+	
+	
+------------------
+	Outros
+	
+**** createElement('element')
+
+	Cria um elemento vazio./
+	
+**** element.appendChild('childElement')
+	
+	Faz append de childElement como filho de element.
+	
+	Outra maneira de fazer o mesmo que este método é usar string literals e ir usando o operador de concatenação no innerHtml.
+
+**** element.cloneNode()
+
+	Clona element. Clona apenas a casca, sem o conteúdo.
+	Se passarmos true como argumento, um clone de tudo, incluindo o conteúdo, é feito. Clone de profundidade.
+
+**** remove()
+
+	Remove o elemeto que chama o método.
+
+------------------------------------- Eventos ---------------------------------------
+	Eventos são ações que acontecem a partir de interações do usuário.
+	Javascript nos permite executar códigos quando algum evento ocorre. Fazemos isso usando handler attributes:
+	
+	<element event="codigo javascript">	
+		event é um handler attribute
+		
+	onclick --> handler attribute que executa o código especificado quando se clica no elemento
+		currentTarget --> referencia o elemento que está chamando o evento
+		target --> varia de acordo com onde se clicou dentro do elemento
+			classlist --> lista as classes
+	onchange --> 									  				quando o elemento HTML é mudado
+	onload -->														quando o browser termina de carregar a página
+	onkeydown -->													quando o usuário aperta alguma tecla
+	onmouseover -->													quando o cursor passa pelo elemento
+	onmouseout -->													quando o cursor sai do elemento
+	
+	
+	onsubmit --> evento de envio de um formulário.
+		form.onsubmit = function (event) {
+			event.preventDefault(); --> impede que o formulário seja enviado, no caso de ser uma função passada para onsubmit
+		}
+		Essa alternativa faz com que apenas o último definido seja impedido de mandar o formulário. Para fazer mais de um, usamos addEventListener:
+			addEventListener('nomedoevento',function(event);
+				nomedoevento = submit, neste exemplo
+		
+		EventListener --> fica observando o elemento. Podemos passar, quando adicionamos um EventListener, qual evento deverá ser escutado e qual ação tomar quando ele acontecer.
+			'nomedoevento' pode ser click, input.
+
+-------------------------- Useful Methods ------------------------------
+
+**** write --> imprime no html o que estiver entre parêntesis. Deve apenas ser utilizado para testes.
+	document.write();
+
+**** alert --> cria um alerta na tela e imprime o conteúdo
+	window.alert();
+	
+Especificar o window é opcional.
+
+**** window.print() --> imprime (literalmente) o conteúdo da página
+
+--------------------------- Regex no Javascript --------------------------
+Expressões regulares
+	Tecnologia utilizada em todas as linguagens para buscar por padrões
+		
+	Leitura da esquerda para a direita, um caractere de cada vez.
+	Necessário conhecer os caracteres reservados da tecnologia.
+	
+	/ expression / flags
+	
+	Para usar caracteres especiais usamos o \ antes
+	
+	const re = /foo/ --> as barras determinam uma expressão regular
+	const re = new RegExp(/foo/) --> ou "/foo/" como argumento
+
+	g --> global, busca no texto todo
+		/foo/g
+	
+	frase --> pesquisa exata
+	^frase --> inicio da string
+	Dev$ --> fim da string
+	
+	[] --> procura qualquer um (caracteres dentro do colchete)
+	[A-Z] --> procura caracteres no intervalo
+	[^xyz] --> não tem x,y,z.
+	
+	^4\d{0,15} --> inicia com um 4, seguido de 15 digitos
+	5[1-5] --> inicia com um 5, seguido de um digito entre 1 e 5
+	
+	| --> ou lógico
+	
+----- Funções que aceitam regex como argumento:
+	match() --> agrupa os padrões em um array
+	search() --> pesquisa se existe ou não o padrão
+	replace() --> substitui os padrões por um novo valor
+	
+------------------------ Boas práticas ----------------------------------
+	const em variáveis que não forem mudar
+	CamelCase
+
+------------------------ Bibliotecas Externas -----------------------------
+	imask.js.org --> criação de máscaras sobre elementos input
+	
+
