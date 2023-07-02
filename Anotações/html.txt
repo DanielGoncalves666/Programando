@@ -1,6 +1,7 @@
 HTML -> Hypertext Markup Language
 
 No vscode, usar ! + enter para colocar o esqueleto padrão.
+div#id --> cria uma div com id
 
 HTML não é case sensitive.
 

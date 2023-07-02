@@ -34,7 +34,7 @@ sudo apt install git --> instala o git na máquina linux
 	git commit -am "comentario" --> faz a operação do git add e cria um commit novo.
 	git commit --> um arquivo será aberto e lá vc deve inserir o nome do commit.
 	
-***git commit -m "comentario" --amend --> corrigi o nome de um commit
+***git commit -m "comentario" --amend --> corrige o nome de um commit, além de juntar o que está no staging area com o do commit anterior. 
 
 ***git log --> retorna as informações dos commits realizados
 	git log --oneline -->informações enxutas e em apenas uma linha
@@ -87,6 +87,7 @@ sudo apt install git --> instala o git na máquina linux
 		   -D --> deleta a branch, caso tiver algum commit
 	git branch -v --> mostra o último commit na branch
 	git branch -r --> lista as branchs remotas
+	git branch -a --> mostras todas as branchs (incluindo remotas)
 
 ***git checkout nome_do_branch --> muda o repositório para o branch especificado 
 
@@ -153,3 +154,6 @@ Aponta para um commit específico
 	git tag --> mostra as tags existentes
 
 ***git push repositório_online nome_da_tag --> para mandar para o github
+
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - //
+Para dar pull em uma branch do github basta usar o comando git checkout nome_branch e fazer o pull normal.

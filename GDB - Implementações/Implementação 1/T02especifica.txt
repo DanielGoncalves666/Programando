@@ -1,0 +1,106 @@
+
+TRABALHO PRÁTICO - ETAPA 1
+
+Esta etapa tem como objetivo implementar algoritmos de acesso a registros 
+de tamanho fixo armazenados em um arquivo grande e comparar o desempenho deles.
+Segundo Adam Jacobs em "The Patologies of Big Data, CACM, August, 2009", um arquivo
+grande é aquele que ocupa uma área de pelo menos 5 vezes o tamanho da 
+memória RAM do equipamento de testes.
+
+
+1.A) IMPLEMENTAR AS OPERAÇÕES ABAIXO EM UM ARQUIVO NÃO ORDENADO BLOCADO (HEAP FILE)
+
+	O ARQUIVO DEVE ARMAZENAR REGISTROS DE TAMANHO FIXO NO SEGUINTE FORMATO
+		REGISTRO(50)  
+		. NSEQ   INT(4)   
+		. TEXT   CHAR(46) 
+
+	IMPLEMENTAR AS SEGUINTES OPERAÇÕES:
+                1.A.1) CREATE_HEAP_FILE
+		  -  ENTRADA: nro_de_registros 
+		  -  SAIDA: arquivo com registros formatados
+		  -          NSEQ:  0 <= NSEQ < nro_de_registros
+		  -          SUGESTÃO: Gerar TEXT de forma aleatória
+                  -  OBS: o nro_de_registros deve ser tal que o tamanho total do
+		  arquivo em bytes seja maior ou igual a 5 vezes a memória RAM
+		  do equipamento onde serão realizados os experimentos.
+
+		1.A.2) READ_RANDOM
+                  -  ENTRADA:arquivo com registros
+		  -          NSEQ 
+                  -  SAIDA: print registro do aluno
+
+		1.A.3) ISRT_AT_END
+		  -     ENTRADA:  arquivo com registros
+		  -     SAIDA: arquivo com mais um registro
+		  -	       NSEQ=ULTIMO(NSEQ)+1
+
+		1.A.4) UPDATE_RANDOM 
+		  - ENTRADA: arquivo com registros
+                           NSEQ para atualização
+                           NOVO TEXT                          
+                   - SAIDA: arquivo com registro atualizado
+
+		1.A.5) DELETE_RANDOM 
+		   - ENTRADA: arquivo com registros
+                            NSEQ 
+                   - SAIDA: arquivo com registro atualizado para
+			    NSEQ=ABSOLUTO(NSEQ) * -1
+
+1.B) IMPLEMENTAR E REALIZAR EXPERIMENTOS COM VARREDURA SEQUENCIAL 
+	
+	- ENTRADA: arquivo com registros
+	  	    nro de registros por página de leitura
+		 
+	- SAIDA: quantidade de registros válidos* 
+		  nro de páginas lidas
+		  tempo de processamento
+
+	- REALIZAR EXPERIMENTOS COM OS SEGUINTES TAMANHOS DE PÁGINA:
+		1) leitura com blocos de 1 registro
+	        2) leitura com blocos de 1.000 de registros
+		3) leitura com blocos de 10.000 de registros
+                4) leitura com blocos de 1.000.000 de registros
+
+	* OBS: um registro é válido SE (NSEQ >= 0).
+	
+1.C)IMPLEMENTAR e REALIZAR EXPERIMENTOS DE ACESSO ALEATÓRIO (RANDOM)
+
+	ENTRADA: arquivo com registros 
+		 quantidade de registros
+
+	SAIDA:
+		tempo de acesso aleatório aos registros escolhidos
+		(as chaves devem ser escolhidas aleatoriamente)
+		quantidade de leituras de registros válidos
+		quantidade de leituras de registros inválidos
+
+	PROCESSAMENTO:		
+		. ESCOLHER DE FORMA ALEATORIA (RANDOM) UM VALOR PARA NSEQ
+		. REALIZAR A LEITURA DO REGISTRO ESCOLHIDO (NSEQ = RANDOM(nro_registros))
+		. VERIFICAR SE O REGISTRO É VALIDO
+		. acumular no contador de leituras válidas/inválidas
+	
+	OBS: repetir os experimento até que a quantidade de registros seja tal que
+	o tempo de acesso aleatório seja maior que o menor tempo de leitura de todo o 
+	arquivo (conforme medito no item 1.B). Para cada repetição do experimento 
+	deve-se reiniciar a máquina.
+
+-------
+O QUE ENTREGAR E O VALOR DE CADA ITEM ENTREGUE
+
+I) um aluno do grupo deve entregar, pelo MS Teams, 
+     [Valor 2 pontos] o código fonte
+     [Valor 2 pontos] um arquivo binário com os primeiros 100KB do arquivo gerado no item 1.A
+
+II) todos os alunos devem realizar os experimentos, de forma individual,
+preferencialmente em equipamentos de diferentes configurações e entregar 
+um relatório contendo:
+     nome do componente do grupo que fez a entrega do item I). 
+     [Valor 1] configuração do equipamento de teste individual (CPU, RAM, DISCO e SISTEMA OPERACIONA)  
+     [Valor 2] tempo medido em todos os experimentos realizados
+
+III) a critério do professor poderá ser solicitada uma apresentação de execução do código.
+
+------
+---

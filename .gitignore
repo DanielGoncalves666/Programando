@@ -1,7 +1,9 @@
 *
 !*/
 !*.*
-.vscode/*
+*/a.out
+/.vscode/*
+*/.vscode/*
 /URI/Java/nbproject/private/
 /URI/Java/build/
 /Rust/*/target

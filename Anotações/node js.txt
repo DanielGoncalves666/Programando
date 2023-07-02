@@ -7,7 +7,6 @@
 		Permite instalar bibliotecas de terceiros e fornecer bibliotecas.
 		O Yarn é mais rápido que o npm.
 	
-	yarn init -y
 	npm init --> cria um novo projeto.
 			Cria um arquivo package.json, o qual armazena as dependências do projeto.
 devDependencies --> dependências apenas no ambiente de desenvolvimento
@@ -15,7 +14,9 @@ dependencies --> dependências para a produção
 			
 		Quando instalamos uma dependência, uma bosta chamada node_modules é criado, onde todas as dependências e suas dependências são armazenadas.
 				
---------------------------------- Yarn -------------------------------				
+--------------------------------- Yarn -------------------------------		
+	yarn init -y
+		-y responde sim para todas as perguntas.	
 						
 ---------------------------------- Node -----------------------------	
 	

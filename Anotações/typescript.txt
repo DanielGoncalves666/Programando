@@ -17,11 +17,11 @@
 	Depois da conversão, executamos o javascript normalmente.
 	
 	
-	
-	
 	O editor nos avisará quando for necessário adicionar tipagem.
 	Maneiras de definir tipos:
 		atribuir um valor padrão pra variavel.
 			user = "" --> entende que é uma string
 		indicar o tipo
 			email: string
+			
+	ts-node-dev --> faz o papel do tsc(conversão) e do nodeman(atualizar o server de acordo com alterações no código)

@@ -1,0 +1,41 @@
+++ editorconfig --> extensão do vscode (e outras IDE's).
+	Padroniza configurações entre diferentes editores de código.
+	
+	generate editorconfig
+		dentro do arquivo criado podemos especificar configurações
+			ident_style --> tabs para considerar tab
+			
+++ eslint --> não é exclusivo do vscode
+	Força padrão de código
+	
+	yarn add eslint -D
+	yarn eslint --init
+	
+	Necessário ter a extensão ESLint
+
+		"[javascript]": {
+		    "editor.codeActionsOnSave": {
+		        "source.fixAll.eslint": true, 
+		    }
+		},
+	Adicionamos essa configuração no settings.json do vscode pra dizer pra ele 	realizar as correções quando salvar.
+
+
+	yarn add -D eslint-import-resolver-typescript    
+		plugin do eslint
+			dá a habilidade de entender tss
+			
+++ prettier --> deixa o código mais bonito
+	yarn add prettier eslint-config-prettier eslint-plugin-prettier -D
+	
+No arquivo de configuração do eslint, adicionar:
+	extends:
+		"plugin:@typescript-eslint/recommended",
+        "prettier/@typescript-eslint",
+        "plugin:prettier/recommended"
+        
+    plugins:
+    	"prettier"
+
+	rules:
+		"prettier/prettier": "error"

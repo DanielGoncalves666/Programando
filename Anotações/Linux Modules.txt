@@ -1,0 +1,26 @@
+
+================== Comandos ========================
+
+Para instalar o pacote contendo modprobe, insmod, depmod:
+	 sudo apt-get install build-essential kmod
+	 
+Para verificar os headers disponíveis:
+	 sudo apt-cache search linux-headers-`uname -r`
+Para instalar os headers:
+	sudo apt install kmod linux-headers-5.4.0-80-generic
+
++++ modprobe -->
+
++++ insmod --> carrega um módulo no kernel do linux (traços são substituidos por _)
+
++++ rmmod --> descarrega um módulo do kernel
+
++++ depmod -->
+
+
++++ lsmod --> mostra os módulos carregados no kernel no momento.
+	Formata e mostra o conteúdo de /proc/modules, onde a lista dos módulos carregados é armazenada.
+	
++++ modinfo nome.ko --> mostra informações sobre o módulo
+	
+=====================================================
