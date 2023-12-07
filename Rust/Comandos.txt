@@ -3,27 +3,9 @@ rustup docs --book
 	
 rustup doc
 	para acessar a documentação
-	
-rustc SourceCodeName    
-	para compilar, um arquivo executável é gerado
-	
-cargo new projectName
-	cria um novo projeto de nome projectName em um diretório de mesmo nome.
+
 
 Dentro de um projeto em RUST:	
-	cargo build
- 		faz a compilação e gera um executável
-	cargo build --release
-		faz a compilação e gera o executável do projeto com otimizações
-	
-	cargo run
-		faz a compilação e executa
-	
-	cargo check
-		apenas compila, não gerando um arquivo executável
-		
-	cargo update
-		ignora Cargo.lock e o modifica para as versões mais atuais dos crates (com ressalvas do versionamento)
 		
 	cargo doc --open
 		

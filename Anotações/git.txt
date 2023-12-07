@@ -1,57 +1,6 @@
-sudo apt install git --> instala o git na máquina linux
 
-***git version --> verifica a versão atualmente instalada
-***git help -> mostra ajuda e lista os comandos
-
-// - - - - - - - - - - - - - - Configuração - - - - - - - - - - - - - - - - - -//
-
-***git config --global user.name "usuario" --> configura o nome do usuario
-	git config user.name --> retorna o nome de usuário
-
-***git config --global user.email "email" --> configura o email
-	git config user.email --> retorna o email do usuário
-
-***git config --global core.editor "editor" --> configura o editor usado
-	git config core.editor --> retorna o editor padrão
-
-***git config --global --unset CONFIGURAÇÃO --> apaga a configuração especificada 
-
-***git config --list --> retorna todas as informações de configuração
-
-// - - - - - - - - - - - - - - - Básico - - - - - - - - - - - - - - - - - - - //
-
-***git init --> cria um repositório local
-	git init --bare --> cria um repositório remoto em um servidor
-
-***git status --> verifica os arquivos nos repositórios
-
-***git add --> adiciona os arquivos para poderem ser commitados
-	git add . ou git add * --> adiciona todos os arquivos
-	git add nome_do_arquivo --> adiciona apenas o arquivo especificado
-
-***git commit --> armazenas os arquivos adicionados em um commit
-	git commit -m "comentário" --> para criar um commit
-	git commit -am "comentario" --> faz a operação do git add e cria um commit novo.
-	git commit --> um arquivo será aberto e lá vc deve inserir o nome do commit.
-	
-***git commit -m "comentario" --amend --> corrige o nome de um commit, além de juntar o que está no staging area com o do commit anterior. 
-
-***git log --> retorna as informações dos commits realizados
-	git log --oneline -->informações enxutas e em apenas uma linha
-	git log --graph --> mostra o grafo de commits
-	git log --all --> mostra todos os branchs
-	git log -n K --> mostra os K últimos commits
-	git log --stat --> mosta o numero de linhas adicionadas e removidas
-	git log --parents --> mostra, na frente do hash do commit, o hash do commit pai
-	git log --decorate --> mostra onde o head está
-	
-***git log nome_do_arquivo --> todos os commits em que o arquivo foi alterado são mostrados
 
 // - - - - - - - - - - - - - - - Básico 2 - - - - - - - - - - - - - - - - - - //
-
-***git log --diff-filter=D --summary
-	   --diff-filter irá filtrar os commites e o D indica que será em busca de commits com arquivos deletados
-	   --sumary lista algumas informações
 
 ***git rm nome_do_arquivo --> remove um arquivo do repositório
 ***git rm --cached nome_do_arquivo --> remove um arquivo que já tenha sido adicionado
@@ -81,25 +30,7 @@ sudo apt install git --> instala o git na máquina linux
 
 // - - - - - - - - - - - - - - Branch - - - - - - - - - - - - - - - - - - - //	
 
-***git branch --> indica o ramo que o projeto se encontra
-	git branch nome_do_novo_branch --> cria um novo branch
-	git branch -d nome_do_branch --> deleta o branch, se nao tiver nenhum cmmit
-		   -D --> deleta a branch, caso tiver algum commit
-	git branch -v --> mostra o último commit na branch
-	git branch -r --> lista as branchs remotas
-	git branch -a --> mostras todas as branchs (incluindo remotas)
 
-***git checkout nome_do_branch --> muda o repositório para o branch especificado 
-
-***git checkout -b nome_da_nova_branch --> cria uma nova branch e muda para ela
-***git checkout -b branch_local branch_remota/branch_local --> para criar uma branch local que condiz com a branch remota
-	git checkout -t branch_remota/branch_local --> faz a mesma coisa
-
-***git merge nome_do_ramo --> fundir uma branch com a que se estiver trabalhando no momento (para muitos conflitos)
-	***  -m "comentário" --> para enserir o comentario na hora
-
-***git rebase nome_da_outra_branch --> remove os commits depois da base, coloca os commits da outra branch e adiciona os commits removidos na frente. Isso elimina a árvore que se vai criando com o merge
-	git rebase --continue --> depois que se resolver os conflitos que aparecerem
 
 // - - - - - - - - - - - - Diferenças e Alterações - - - - - - - - - - - - - //	
 
@@ -122,38 +53,10 @@ sudo apt install git --> instala o git na máquina linux
 
 //- - - - - - - - - - - - - - - -GITHUB - - - - - - - - - - - - - - - - - - //
 
-***git remote --> verifica se exite um repositório remoto
-	      -v --> mostra detalhes de um repositório remoto
 
-***git remote add nome_repositorio_online https://github.com/DanielGoncalves666/nome_do_repositorio.git   --> faz a ligação com o repositório remoto
-	git remote add servidor file://endereço/caminho --> para um repositorio remoto em um servidor
-	
-***git remote rename nome_repo_remoto outro_nome --> muda o nome do repositório remoto
-***git remote set-url nome_repo_remoto nova_url --> muda a url de um repositório remoto
-
-***git push -u repositório_online  branch_que_sera_enviada --> enviar para o repositorio remoto
-	-u  de upstream
-	git push repositório_online  branch_que_sera_enviada --> enviar para o repositório depois da primeira vez
-	git push --> mesmo que o anterior, funciona igualmente
-
-***git push repositório_online  :branch --> deleta uma branch remota
-
-***git pull repositorio_online branch --> puxa as alterações realizadas na branch especificada do repositorio remoto
-	git pull --> puxa tudo
-	
-***git fetch --> baixa as atualizações do repositório remoto, mas não as aplica	
-	Podemos usar git rebase para integrar as mudanças
-	
-***git clone URL_do_projeto --> para clonar um projeto a partir de um repositorio remoto	
 
 // - - - - - - - - - - - - - Tag - - - - - - - - - - - - - - - - - - - - - //
 
-Aponta para um commit específico
-
-***git tag nome_da_tag --> cria uma tag que aponta para o commit sendo acessado
-	git tag --> mostra as tags existentes
-
-***git push repositório_online nome_da_tag --> para mandar para o github
 
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - //
-Para dar pull em uma branch do github basta usar o comando git checkout nome_branch e fazer o pull normal.
+
